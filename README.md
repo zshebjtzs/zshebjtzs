@@ -77,13 +77,13 @@
 
 ### [qdezJDS](https://github.com/zshebjtzs/qdezJDS)
 
-A full-stack community platform with a Vue 3 frontend and a Node.js, Express, and MySQL backend, including forums, file storage, administration, authentication, permissions, and notifications.
+一个基于 Vue 3 前端与 Node.js、Express、MySQL 后端构建的全栈社区平台，包含论坛、文件云、管理后台、身份认证、权限控制与通知功能。
 
 `待确认` · 协作项目
 
-- Modular frontend and backend structure
-- Forum, file storage, and administration modules
-- Authentication, permission controls, and security protections
+- 前后端模块化架构
+- 论坛、文件存储与管理后台模块
+- 身份认证、权限控制与安全防护
 
 ## 开源贡献
 
@@ -99,9 +99,9 @@ A full-stack community platform with a Vue 3 frontend and a Node.js, Express, an
 
 ## 技术栈
 
-- **Experienced:** JavaScript, C++, Git, GitHub
-- **Familiar:** TypeScript, Vue 3, Node.js, MySQL, HTML, CSS, Vite
-- **Exploring:** —
+- **熟悉:** JavaScript, C++, Git, GitHub
+- **使用过:** TypeScript, Vue 3, Node.js, MySQL, HTML, CSS, Vite
+- **正在探索:** —
 
 ## 活动档案
 
