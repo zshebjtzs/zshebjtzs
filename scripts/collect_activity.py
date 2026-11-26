@@ -38,14 +38,15 @@ def paginate(url, max_pages=5):
 def normalize_search_item(item, kind):
     repo = item.get("repository") or {}
     number = item.get("number")
+    actual_kind = "pull_request" if item.get("pull_request") else "issue"
     merged = bool(item.get("pull_request", {}).get("merged_at"))
-    state = "merged" if kind == "pull_request" and merged else item.get("state", "unknown")
+    state = "merged" if actual_kind == "pull_request" and merged else item.get("state", "unknown")
     return {
         "id": item.get("node_id") or item.get("html_url"),
         "source": "github",
         "repository": repo.get("full_name"),
         "url": item.get("html_url"),
-        "type": kind,
+        "type": actual_kind,
         "title": item.get("title") or f"{kind} #{number}",
         "description": (item.get("body") or "").strip()[:500],
         "status": state,
@@ -80,6 +81,10 @@ def normalize_event(event):
     }
     if typ == "PushEvent":
         commits = payload.get("commits") or []
+        # GitHub may expose push events without commit details; do not create
+        # activity candidates that cannot be tied to a concrete commit.
+        if not commits:
+            return None
         return {**base, "type": "push", "title": f"Pushed updates to {repo}",
                 "description": f"{len(commits)} commit(s) in this push.", "status": "pushed",
                 "commit_count": len(commits), "url": f"https://github.com/{repo}/commits"}
@@ -93,10 +98,9 @@ def normalize_event(event):
         return {**base, "type": "release", "title": rel.get("name") or rel.get("tag_name") or "Published a release",
                 "description": (rel.get("body") or "")[:500], "status": payload.get("action", "published"),
                 "url": rel.get("html_url")}
-    if typ == "IssuesEvent":
-        issue = payload.get("issue") or {}
-        return {**base, "type": "issue_event", "title": issue.get("title", "Issue activity"),
-                "description": "", "status": payload.get("action", "updated"), "url": issue.get("html_url")}
+    # Authored issues and pull requests are collected through Search API above.
+    # IssuesEvent only reports lifecycle changes (assigned/labeled/closed/etc.),
+    # which duplicate those canonical records and add little profile value.
     return None
 
 def main():
