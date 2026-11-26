@@ -12,6 +12,14 @@ projects:
       A browser-based strategy game built around graph topology and tree growth,
       featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load,
       and asynchronous AI decision-making.
+    description_zh: >-
+      一款围绕图结构与树生长机制设计的浏览器策略游戏，包含程序化 Voronoi 地图、PVP/PVE、交互式教程、存档读档与异步 AI 决策。
+    highlights_zh:
+      - 程序化生成 Voronoi 地图并构建图邻接关系
+      - 模块化实现游戏状态、规则校验、战斗结算与渲染
+      - AI 搜索采用迭代加深、Alpha-Beta/PVS 与置换表
+      - 提供六档 AI 难度，并控制搜索预算
+      - 支持 GitHub Pages 部署与 Windows 离线桌面分发
     technologies:
       - JavaScript
       - HTML5
@@ -37,6 +45,13 @@ projects:
     description: >-
       A version-controlled library of reusable agent Skills, paired with a
       searchable bilingual portal for personal, community, shared, and external Skills.
+    description_zh: >-
+      版本化管理的可复用 Agent Skills 库，配套双语检索门户，支持个人、社区、共享及外部来源的 Skills。
+    highlights_zh:
+      - 双语文档门户与全文检索
+      - 声明式外部 Skill 目录及来源归属追踪
+      - 支持单个 Skill 预览与 ZIP 下载
+      - 通过自动化工作流执行校验与部署
     technologies:
       - JavaScript
       - Node.js
@@ -60,6 +75,12 @@ projects:
       A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript,
       Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are
       in place; download and media-processing features are not yet integrated.
+    description_zh: >-
+      基于 Vue 3、TypeScript、Vite、Naive UI 与 Neutralinojs 构建的轻量 Windows yt-dlp 桌面 GUI。目前已完成桌面外壳与基础界面，下载及媒体处理功能尚未集成。
+    highlights_zh:
+      - 轻量级 Windows 桌面外壳
+      - 基于 Vue 的界面与开发工作流
+      - 支持便携式桌面打包
     technologies:
       - Vue 3
       - TypeScript
