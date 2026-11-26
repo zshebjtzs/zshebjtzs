@@ -39,5 +39,5 @@ jobs:
       - name: Commit generated files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: regenerate profile from reviewed data"
-          file_pattern: README.md activity/ACTIVITY.md
+          commit_message: "chore: regenerate bilingual profile"
+          file_pattern: README.md README.en.md activity/ACTIVITY.md activity/ACTIVITY.en.md
