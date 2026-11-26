@@ -2,13 +2,23 @@
 primary_focus:
   - Software Engineering
   - Open-Source Development
+primary_focus_zh:
+  - 软件工程
+  - 开源开发
 secondary_interests:
   - Developer Tools
   - AI-assisted Development
   - Web and Desktop Applications
+secondary_interests_zh:
+  - 开发者工具
+  - AI 辅助开发
+  - Web 与桌面应用
 long_term_interests:
   - Algorithms
   - Computer Science
+long_term_interests_zh:
+  - 算法
+  - 计算机科学
 review_policy:
   suggestion_source:
     - recent_projects
