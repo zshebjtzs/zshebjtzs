@@ -3,9 +3,9 @@
 
 # ZSHEBJTZS
 
-### Independent Developer
+### 独立开发者
 
-**Software Engineering · Open Source · Developer Tools**
+**软件工程 · 开源协作 · 开发者工具**
 
 > 一切伟大的思想和行动，都源于一个微不足道的开始。
 
@@ -19,59 +19,59 @@
 
 ## 关于我
 
-Exploring software engineering and building practical software through open-source development.
+通过开源实践探索软件工程，持续构建解决实际问题的软件。
 
-**AI-assisted Development** — AI tools are used as part of an engineering workflow covering requirements analysis, architecture design, implementation, debugging, testing, and delivery.
+**AI 辅助工程化开发** — 将 AI 工具融入完整的软件工程流程，覆盖需求分析、架构设计、实现、调试、 测试与交付，而不将其视为替代工程判断的捷径。
 
 ## 当前关注
 
 **主要方向**
-- Software Engineering
-- Open-Source Development
+- 软件工程
+- 开源开发
 
 **次要方向**
-- Developer Tools
-- AI-assisted Development
-- Web and Desktop Applications
+- 开发者工具
+- AI 辅助开发
+- Web 与桌面应用
 
 **长期兴趣**
-- Algorithms
-- Computer Science
+- 算法
+- 计算机科学
 
 ## 精选项目
 
 ### [TreeGrow — Growth Tree: Graph Theory](https://github.com/zshebjtzs/tree-grow-game) · [在线体验](https://zshebjtzs.github.io/tree-grow-game/)
 
-A browser-based strategy game built around graph topology and tree growth, featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load, and asynchronous AI decision-making.
+一款围绕图结构与树生长机制设计的浏览器策略游戏，包含程序化 Voronoi 地图、PVP/PVE、交互式教程、存档读档与异步 AI 决策。
 
 `持续维护中` · 个人项目
 
-- Procedural Voronoi map generation and graph adjacency construction
-- Modular game state, rule validation, combat resolution, and rendering
-- AI search with iterative deepening, Alpha-Beta/PVS, and transposition tables
-- Six AI difficulty levels with bounded search budgets
-- GitHub Pages deployment and Windows offline distribution
+- 程序化生成 Voronoi 地图并构建图邻接关系
+- 模块化实现游戏状态、规则校验、战斗结算与渲染
+- AI 搜索采用迭代加深、Alpha-Beta/PVS 与置换表
+- 提供六档 AI 难度，并控制搜索预算
+- 支持 GitHub Pages 部署与 Windows 离线桌面分发
 
 ### [My Agent Skills](https://github.com/zshebjtzs/my-agent-skills) · [在线体验](https://zshebjtzs.github.io/my-agent-skills/)
 
-A version-controlled library of reusable agent Skills, paired with a searchable bilingual portal for personal, community, shared, and external Skills.
+版本化管理的可复用 Agent Skills 库，配套双语检索门户，支持个人、社区、共享及外部来源的 Skills。
 
 `持续维护中` · 个人项目
 
-- Bilingual documentation portal with full-text search
-- Declarative external Skill catalog and source attribution
-- Per-Skill previews and ZIP downloads
-- Automated validation and deployment workflows
+- 双语文档门户与全文检索
+- 声明式外部 Skill 目录及来源归属追踪
+- 支持单个 Skill 预览与 ZIP 下载
+- 通过自动化工作流执行校验与部署
 
 ### [BiliFlow](https://github.com/zshebjtzs/BiliFlow)
 
-A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are in place; download and media-processing features are not yet integrated.
+基于 Vue 3、TypeScript、Vite、Naive UI 与 Neutralinojs 构建的轻量 Windows yt-dlp 桌面 GUI。目前已完成桌面外壳与基础界面，下载及媒体处理功能尚未集成。
 
 `开发中` · 个人项目
 
-- Lightweight Windows desktop shell
-- Vue-based interface and development workflow
-- Portable desktop packaging
+- 轻量级 Windows 桌面外壳
+- 基于 Vue 的界面与开发工作流
+- 支持便携式桌面打包
 
 ## 其他项目
 
