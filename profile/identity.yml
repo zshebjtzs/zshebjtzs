@@ -2,17 +2,27 @@ identity:
   username: zshebjtzs
   display_name: ZSHEBJTZS
   title: Independent Developer
+  title_zh: 独立开发者
   domains:
     - Software Engineering
     - Open Source
     - Developer Tools
+  domains_zh:
+    - 软件工程
+    - 开源协作
+    - 开发者工具
   bio: 一切伟大的思想和行动，都源于一个微不足道的开始。
   summary: Exploring software engineering and building practical software through open-source development.
+  summary_zh: 通过开源实践探索软件工程，持续构建解决实际问题的软件。
   engineering_method:
     title: AI-assisted Development
+    title_zh: AI 辅助工程化开发
     description: >-
       AI tools are used as part of an engineering workflow covering requirements
       analysis, architecture design, implementation, debugging, testing, and delivery.
+    description_zh: >-
+      将 AI 工具融入完整的软件工程流程，覆盖需求分析、架构设计、实现、调试、
+      测试与交付，而不将其视为替代工程判断的捷径。
   background:
     - Algorithms
     - Computer Science
