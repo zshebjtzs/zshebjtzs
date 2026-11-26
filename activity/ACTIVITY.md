@@ -1,5 +1,5 @@
 # Activity Archive
 
-This archive contains reviewed activity records only.
+Only reviewed records are included.
 
-No reviewed records have been published yet.
+No reviewed activity records have been published yet.
