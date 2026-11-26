@@ -1,5 +1,5 @@
-# Activity Archive
+# 活动档案
 
-Only reviewed records are included.
+仅收录已审核记录。
 
-No reviewed activity records have been published yet.
+目前暂无已审核发布的活动记录。

@@ -11,6 +11,8 @@
 
 [GitHub](https://github.com/zshebjtzs) · [Luogu](https://www.luogu.com.cn/user/933414) · [Bilibili](https://space.bilibili.com/700876219) · [X](https://x.com/zshebjtzs)
 
+**简体中文** · [English](./README.en.md)
+
 </div>
 
 ---
@@ -23,16 +25,16 @@ Exploring software engineering and building practical software through open-sour
 
 ## 当前关注
 
-**Primary**
+**主要方向**
 - Software Engineering
 - Open-Source Development
 
-**Secondary**
+**次要方向**
 - Developer Tools
 - AI-assisted Development
 - Web and Desktop Applications
 
-**Long-term**
+**长期兴趣**
 - Algorithms
 - Computer Science
 
@@ -42,7 +44,7 @@ Exploring software engineering and building practical software through open-sour
 
 A browser-based strategy game built around graph topology and tree growth, featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load, and asynchronous AI decision-making.
 
-`Maintained` · Personal Project
+`持续维护中` · 个人项目
 
 - Procedural Voronoi map generation and graph adjacency construction
 - Modular game state, rule validation, combat resolution, and rendering
@@ -54,7 +56,7 @@ A browser-based strategy game built around graph topology and tree growth, featu
 
 A version-controlled library of reusable agent Skills, paired with a searchable bilingual portal for personal, community, shared, and external Skills.
 
-`Maintained` · Personal Project
+`持续维护中` · 个人项目
 
 - Bilingual documentation portal with full-text search
 - Declarative external Skill catalog and source attribution
@@ -65,7 +67,7 @@ A version-controlled library of reusable agent Skills, paired with a searchable 
 
 A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are in place; download and media-processing features are not yet integrated.
 
-`In Development` · Personal Project
+`开发中` · 个人项目
 
 - Lightweight Windows desktop shell
 - Vue-based interface and development workflow
@@ -77,7 +79,7 @@ A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite
 
 A full-stack community platform with a Vue 3 frontend and a Node.js, Express, and MySQL backend, including forums, file storage, administration, authentication, permissions, and notifications.
 
-`Needs Review` · Collaboration
+`待确认` · 协作项目
 
 - Modular frontend and backend structure
 - Forum, file storage, and administration modules
@@ -87,11 +89,11 @@ A full-stack community platform with a Vue 3 frontend and a Node.js, Express, an
 
 贡献记录采用自动收集、人工审核机制；目前暂无已审核发布的记录。
 
-## Recent Highlights
+## 近期动态
 
 暂无已审核精选动态。
 
-## Milestones
+## 里程碑
 
 里程碑仅在日期、证据与长期意义确认后归档。
 
@@ -101,10 +103,10 @@ A full-stack community platform with a Vue 3 frontend and a Node.js, Express, an
 - **Familiar:** TypeScript, Vue 3, Node.js, MySQL, HTML, CSS, Vite
 - **Exploring:** —
 
-## Activity Archive
+## 活动档案
 
 完整的已审核活动记录见 [activity/ACTIVITY.md](./activity/ACTIVITY.md)。
 
 ---
 
-<sub>Living Developer Profile · 自动追踪事实，人工审核与精选。</sub>
+<sub>动态开发者主页 · 自动追踪事实，人工审核与精选。</sub>
