@@ -12,6 +12,7 @@ identity:
     - 开源协作
     - 开发者工具
   bio: 一切伟大的思想和行动，都源于一个微不足道的开始。
+  bio_en: All great ideas and actions begin with a small, seemingly insignificant step.
   summary: Exploring software engineering and building practical software through open-source development.
   summary_zh: 通过开源实践探索软件工程，持续构建解决实际问题的软件。
   engineering_method:
