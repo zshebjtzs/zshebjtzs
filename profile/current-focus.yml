@@ -1,0 +1,17 @@
+# Current Focus is a human-confirmed statement, not an automatic activity summary.
+primary_focus:
+  - Software Engineering
+  - Open-Source Development
+secondary_interests:
+  - Developer Tools
+  - AI-assisted Development
+  - Web and Desktop Applications
+long_term_interests:
+  - Algorithms
+  - Computer Science
+review_policy:
+  suggestion_source:
+    - recent_projects
+    - technology_usage
+    - reviewed_contributions
+  requires_human_confirmation: true

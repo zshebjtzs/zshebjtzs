@@ -1,0 +1,28 @@
+profile:
+  language: zh-CN
+  visual_direction: Tech-Dawn & Open-Source Minimalist
+  palette:
+    base:
+      - deep-sea-blue
+      - cool-silver-gray
+    accents:
+      - soft-cyan
+      - sunrise-orange
+  layout:
+    featured_projects: 3
+    recent_highlights: 5
+    show_activity_archive: true
+    show_milestones: true
+  privacy:
+    show_email: false
+    show_school: false
+    show_precise_location: false
+    show_age: false
+automation:
+  collect_schedule: weekly
+  collect_scope:
+    - owned_public_repositories
+    - authored_public_pull_requests
+    - authored_public_issues
+    - public_github_events
+  require_human_review_before_publication: true

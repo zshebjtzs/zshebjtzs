@@ -1,0 +1,2 @@
+# Only reviewed records belong here. The collector never writes to this file.
+activities: []

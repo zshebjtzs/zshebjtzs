@@ -1,0 +1,43 @@
+name: Validate and publish profile
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "profile/**"
+      - "activity/records.yml"
+      - "templates/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/publish-profile.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-profile
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate reviewed data
+        run: python scripts/validate_data.py
+      - name: Generate public profile
+        run: python scripts/generate_profile.py
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: regenerate profile from reviewed data"
+          file_pattern: README.md activity/ACTIVITY.md

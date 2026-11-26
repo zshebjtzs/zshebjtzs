@@ -1,0 +1,23 @@
+identity:
+  username: zshebjtzs
+  display_name: ZSHEBJTZS
+  title: Independent Developer
+  domains:
+    - Software Engineering
+    - Open Source
+    - Developer Tools
+  bio: 一切伟大的思想和行动，都源于一个微不足道的开始。
+  summary: Exploring software engineering and building practical software through open-source development.
+  engineering_method:
+    title: AI-assisted Development
+    description: >-
+      AI tools are used as part of an engineering workflow covering requirements
+      analysis, architecture design, implementation, debugging, testing, and delivery.
+  background:
+    - Algorithms
+    - Computer Science
+  links:
+    github: https://github.com/zshebjtzs
+    luogu: https://www.luogu.com.cn/user/933414
+    bilibili: https://space.bilibili.com/700876219
+    x: https://x.com/zshebjtzs

@@ -1,0 +1,56 @@
+name: Collect activity candidates
+
+on:
+  schedule:
+    - cron: "23 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: collect-activity
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Collect public GitHub activity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: zshebjtzs
+        run: |
+          python scripts/collect_activity.py
+          python scripts/normalize_activity.py
+      - name: Open or update review pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/activity-inbox
+          delete-branch: true
+          commit-message: "chore: refresh activity review inbox"
+          title: "chore: review newly collected GitHub activity"
+          body: |
+            Automated collection of public GitHub activity candidates.
+
+            - Review `activity/inbox.json`.
+            - Verify authorship and relevance.
+            - Promote selected records manually into `activity/records.yml`.
+            - Do not treat GitHub status as editorial review status.
+
+            This pull request does not publish the profile.
+          add-paths: |
+            data/collected-activity.json
+            activity/inbox.json
+            data/sync-state.json
