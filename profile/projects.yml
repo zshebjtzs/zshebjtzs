@@ -2,7 +2,7 @@
 # These are intentionally separate fields.
 projects:
   - id: tree-grow-game
-    name: TreeGrow — Growth Tree: Graph Theory
+    name: "TreeGrow — Growth Tree: Graph Theory"
     repository: https://github.com/zshebjtzs/tree-grow-game
     demo: https://zshebjtzs.github.io/tree-grow-game/
     visibility: featured
