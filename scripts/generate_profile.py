@@ -81,8 +81,13 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         if zh else f"- **{m['date']}** — [{localized(m, 'title', lang)}]({m['evidence']}): {localized(m, 'description', lang)}"
         for m in sorted(milestones, key=lambda x: x.get("date", ""), reverse=True)
     ) or ("里程碑仅在日期、证据与长期意义确认后归档。" if zh else "Milestones are archived only after their date, evidence, and long-term significance are verified.")
+    stack_labels = {
+        "Experienced": "熟悉" if zh else "Experienced",
+        "Familiar": "使用过" if zh else "Familiar",
+        "Exploring": "正在探索" if zh else "Exploring",
+    }
     stack_md = "\n".join(
-        f"- **{level}:** {', '.join(values) if values else '—'}"
+        f"- **{stack_labels.get(level, level)}:** {', '.join(values) if values else '—'}"
         for level, values in stack.items()
     )
     links = identity.get("links", {})
