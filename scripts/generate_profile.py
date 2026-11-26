@@ -102,7 +102,7 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "{{display_name}}": identity.get("display_name", identity["username"]),
         "{{title}}": identity.get("title_zh" if zh else "title_en") or identity.get("title", ""),
         "{{domains}}": " · ".join(identity.get("domains_zh" if zh else "domains_en") or identity.get("domains", [])),
-        "{{bio}}": identity.get("bio", ""),
+        "{{bio}}": identity.get("bio", "") if zh else identity.get("bio_en", identity.get("bio", "")),
         "{{social_links}}": social,
         "{{language_switch}}": "**简体中文** · [English](./README.en.md)" if zh else "[简体中文](./README.md) · **English**",
         "{{about_heading}}": labels["about_heading"],
