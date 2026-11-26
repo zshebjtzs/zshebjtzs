@@ -87,11 +87,22 @@ A full-stack community platform with a Vue 3 frontend and a Node.js, Express, an
 
 ## Open-Source Contributions
 
-Contributions are collected automatically and published after review; no reviewed records have been published yet.
+- [[AI] 阶段 C：升级战略局面评估](https://github.com/zshebjtzs/tree-grow-game/pull/36) · zshebjtzs/tree-grow-game
+- [AI 决策架构重构与六档难度升级](https://github.com/zshebjtzs/tree-grow-game/pull/33) · zshebjtzs/tree-grow-game
+- [修复 AI 将已生长根节点误判为可生长节点的问题](https://github.com/zshebjtzs/tree-grow-game/pull/32) · zshebjtzs/tree-grow-game
+- [修复直接攻击非堡垒分叉节点时的整树摧毁结算](https://github.com/zshebjtzs/tree-grow-game/pull/31) · zshebjtzs/tree-grow-game
+- [修复回放地图背景与逐步导航动画问题](https://github.com/zshebjtzs/tree-grow-game/pull/29) · zshebjtzs/tree-grow-game
+- [对局回放音效：同步行动事件与播放控制](https://github.com/zshebjtzs/tree-grow-game/pull/28) · zshebjtzs/tree-grow-game
+- [回放视觉动画 A0–A4：行动复现、时间线交互与回归验证](https://github.com/zshebjtzs/tree-grow-game/pull/27) · zshebjtzs/tree-grow-game
+- [feat: add Windows offline desktop release](https://github.com/zshebjtzs/tree-grow-game/pull/4) · zshebjtzs/tree-grow-game
 
 ## Recent Highlights
 
-No reviewed highlights yet.
+- **2026-11-24** — [[AI] 阶段 C：升级战略局面评估](https://github.com/zshebjtzs/tree-grow-game/pull/36)
+- **2026-11-22** — [AI 决策架构重构与六档难度升级](https://github.com/zshebjtzs/tree-grow-game/pull/33)
+- **2026-11-20** — [大型存档与长棋谱性能优化：F0–F5](https://github.com/zshebjtzs/tree-grow-game/pull/23)
+- **2026-11-17** — [R0–R4：完成独立对局回放系统](https://github.com/zshebjtzs/tree-grow-game/pull/22)
+- **2026-11-15** — [feat: add complete interactive tutorial experience](https://github.com/zshebjtzs/tree-grow-game/pull/15)
 
 ## Milestones
 
