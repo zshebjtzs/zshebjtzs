@@ -95,8 +95,8 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     archive_sentence = "完整的已审核活动记录见" if zh else "Browse the complete reviewed activity archive:"
     replacements = {
         "{{display_name}}": identity.get("display_name", identity["username"]),
-        "{{title}}": identity.get("title", ""),
-        "{{domains}}": " · ".join(identity.get("domains", [])),
+        "{{title}}": identity.get("title_zh" if zh else "title_en") or identity.get("title", ""),
+        "{{domains}}": " · ".join(identity.get("domains_zh" if zh else "domains_en") or identity.get("domains", [])),
         "{{bio}}": identity.get("bio", ""),
         "{{social_links}}": social,
         "{{language_switch}}": "**简体中文** · [English](./README.en.md)" if zh else "[简体中文](./README.md) · **English**",
