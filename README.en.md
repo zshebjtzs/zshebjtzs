@@ -7,7 +7,7 @@
 
 **Software Engineering · Open Source · Developer Tools**
 
-> 一切伟大的思想和行动，都源于一个微不足道的开始。
+> All great ideas and actions begin with a small, seemingly insignificant step.
 
 [GitHub](https://github.com/zshebjtzs) · [Luogu](https://www.luogu.com.cn/user/933414) · [Bilibili](https://space.bilibili.com/700876219) · [X](https://x.com/zshebjtzs)
 
