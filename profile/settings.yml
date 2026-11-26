@@ -1,5 +1,9 @@
 profile:
   language: zh-CN
+  default_language: zh-CN
+  supported_languages:
+    - zh-CN
+    - en
   visual_direction: Tech-Dawn & Open-Source Minimalist
   palette:
     base:
