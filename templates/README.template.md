@@ -11,48 +11,50 @@
 
 {{social_links}}
 
+{{language_switch}}
+
 </div>
 
 ---
 
-## 关于我
+## {{about_heading}}
 
 {{summary}}
 
 {{engineering_method}}
 
-## 当前关注
+## {{focus_heading}}
 
 {{current_focus}}
 
-## 精选项目
+## {{featured_heading}}
 
 {{featured_projects}}
 
-## 其他项目
+## {{other_heading}}
 
 {{other_projects}}
 
-## 开源贡献
+## {{contributions_heading}}
 
 {{open_source_contributions}}
 
-## Recent Highlights
+## {{highlights_heading}}
 
 {{recent_highlights}}
 
-## Milestones
+## {{milestones_heading}}
 
 {{milestones}}
 
-## 技术栈
+## {{stack_heading}}
 
 {{tech_stack}}
 
-## Activity Archive
+## {{archive_heading}}
 
-完整的已审核活动记录见 [activity/ACTIVITY.md](./activity/ACTIVITY.md)。
+{{archive_link}}
 
 ---
 
-<sub>Living Developer Profile · 自动追踪事实，人工审核与精选。</sub>
+<sub>{{footer}}</sub>
