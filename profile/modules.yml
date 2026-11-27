@@ -1,5 +1,5 @@
-# Design tokens and presentation module order.
-# Keep content, components, and layout configuration separate.
+# Presentation tokens and module order.
+# Content is stored in profile/*.yml; renderers consume these semantic tokens.
 presentation:
   username: zshebjtzs
   theme: tech-dawn
@@ -10,12 +10,16 @@ presentation:
   text_color: "D7E0E8"
   muted_color: "91A4B5"
   panel_color: "102235"
+  panel_alt_color: "142B40"
   border_color: "2B4052"
-  badge_color: "183246"
-  badge_text_color: "DCE5EC"
   project_columns: 3
-  stats_provider: https://github-readme-stats.vercel.app
-  contribution_provider: https://ghchart.rshah.org
+  visual_assets:
+    hero: assets/profile/hero.svg
+    about_zh: assets/profile/about.zh.svg
+    about_en: assets/profile/about.en.svg
+    focus_zh: assets/profile/focus.zh.svg
+    focus_en: assets/profile/focus.en.svg
+  stats_cache: data/stats.json
 modules:
   - id: about
     enabled: true
