@@ -1,7 +1,7 @@
 <!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
-<img src="./assets/profile/hero.svg" alt="Software engineering · Build, iterate, share" width="100%"/>
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/profile/hero.light.svg"/><img src="./assets/profile/hero.dark.svg" alt="Software engineering · Build, iterate, share" width="100%"/></picture>
 
 <sub>软件工程 · 开源协作 · 开发者工具</sub>
 
@@ -21,31 +21,55 @@
 
 ## 关于我
 
-<p><strong>通过开源实践探索软件工程，持续构建解决实际问题的软件。</strong></p><p><sub>工程方法 / ENGINEERING APPROACH</sub></p><p><strong><font color="#79D7D0">AI 辅助工程化开发</font></strong></p><p>将 AI 工具融入完整的软件工程流程，覆盖需求分析、架构设计、实现、调试、 测试与交付，而不将其视为替代工程判断的捷径。</p><p align="center"><img src="./assets/profile/about.zh.svg" alt="Software engineering workflow: requirements, architecture, implementation, testing and delivery" width="100%"/></p>
+<p><strong>通过开源实践探索软件工程，持续构建解决实际问题的软件。</strong></p><p><sub>工程方法 / ENGINEERING APPROACH</sub></p><p><strong>AI 辅助工程化开发</strong></p><p>将 AI 工具融入完整的软件工程流程，覆盖需求分析、架构设计、实现、调试、 测试与交付，而不将其视为替代工程判断的捷径。</p><p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/profile/about.zh.light.svg"/><img src="./assets/profile/about.zh.dark.svg" alt="Software engineering workflow: requirements, architecture, implementation, testing and delivery" width="100%"/></picture></p>
 
 <hr/>
 
 ## 当前关注
 
-<p align="center"><img src="./assets/profile/focus.zh.svg" alt="Three focus areas: primary direction, current practice and long-term interests" width="100%"/></p>
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/profile/focus.zh.light.svg"/><img src="./assets/profile/focus.zh.dark.svg" alt="Three focus areas: primary direction, current practice and long-term interests" width="100%"/></picture></p>
 
 <hr/>
 
-## GitHub 活动
+## 工程理念
 
-<p align="center"><img src="./assets/stats/overview.svg" alt="GitHub 公开活动统计：提交、仓库、Stars 和 Pull Requests" width="100%"/></p><p align="center"><img src="./assets/stats/languages.svg" alt="按代码体积分布的主要编程语言" width="100%"/></p><p align="center"><img src="./assets/stats/contributions.svg" alt="最近 365 天 GitHub 贡献热力图" width="100%"/></p><p align="center"><sub>数据来自 GitHub REST / GraphQL API，定期缓存；提交数使用 GitHub 公开 Commit Search 统计。更新于 2026-11-27。</sub></p>
+<table><tbody><tr><td width="30%"><strong>问题驱动</strong></td><td>先明确真实问题与约束，再决定工具、架构和实现方式。</td></tr><tr><td width="30%"><strong>模块化与职责分离</strong></td><td>明确划分状态、规则、渲染、自动化与展示职责，降低模块间耦合。</td></tr><tr><td width="30%"><strong>可验证的交付</strong></td><td>重视可复现测试、显式校验，以及有证据支撑的发布状态。</td></tr><tr><td width="30%"><strong>将 AI 纳入工程流程</strong></td><td>将 AI 用于分析、设计、实现、调试与测试，同时保留独立的工程判断。</td></tr></tbody></table>
+
+<hr/>
+
+## 技术兴趣
+
+<table><tbody><tr><td width="28%"><strong>软件架构</strong></td><td>模块化系统、职责分离、可维护性与工程交付。<br/><sub>模块化 · 可维护性 · 系统设计</sub></td></tr><tr><td width="28%"><strong>算法与图论</strong></td><td>数据结构、图模型、搜索与决策算法。<br/><sub>数据结构 · 图论 · 搜索算法</sub></td></tr><tr><td width="28%"><strong>开发者工具与自动化</strong></td><td>可复用工具、Agent 工作流、CI 校验与文档系统。<br/><sub>开发者体验 · Agent Skills · CI/CD</sub></td></tr><tr><td width="28%"><strong>交互式与桌面软件</strong></td><td>浏览器交互体验、Canvas 渲染、桌面封装与异步 Worker。<br/><sub>Web · Canvas · 桌面应用</sub></td></tr></tbody></table>
 
 <hr/>
 
 ## 精选项目
 
-<table><tbody><tr><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 01</font> · 持续维护</sub></p><p><strong><a href="https://github.com/zshebjtzs/tree-grow-game">TreeGrow — Growth Tree: Graph Theory ↗</a></strong></p><p>一款围绕图结构与树生长机制设计的浏览器策略游戏，包含程序化 Voronoi 地图、PVP/PVE、交互式教程、存档读档与异步 AI 决策。</p><p><sub>个人项目</sub></p><p><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-65fbc96898c9.svg" alt="HTML5" height="28"/> <img src="./assets/badges/tech-6439894ddf3c.svg" alt="CSS3" height="28"/> <img src="./assets/badges/tech-c3bf8822c5be.svg" alt="Canvas 2D" height="28"/> <img src="./assets/badges/tech-86e96b3c64fb.svg" alt="d3-delaunay" height="28"/> <img src="./assets/badges/tech-6aa812d432b1.svg" alt="Web Worker" height="28"/></p><p><a href="https://zshebjtzs.github.io/tree-grow-game/">在线体验 ↗</a></p></td><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 02</font> · 持续维护</sub></p><p><strong><a href="https://github.com/zshebjtzs/my-agent-skills">My Agent Skills ↗</a></strong></p><p>版本化管理的可复用 Agent Skills 库，配套双语检索门户，支持个人、社区、共享及外部来源的 Skills。</p><p><sub>个人项目</sub></p><p><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-9f74ecdefa06.svg" alt="VitePress" height="28"/> <img src="./assets/badges/tech-05c3b2746e0a.svg" alt="GitHub Actions" height="28"/> <img src="./assets/badges/tech-e6c2ada0ee18.svg" alt="GitHub Pages" height="28"/></p><p><a href="https://zshebjtzs.github.io/my-agent-skills/">在线体验 ↗</a></p></td><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 03</font> · 开发中</sub></p><p><strong><a href="https://github.com/zshebjtzs/BiliFlow">BiliFlow ↗</a></strong></p><p>基于 Vue 3、TypeScript、Vite、Naive UI 与 Neutralinojs 构建的轻量 Windows yt-dlp 桌面 GUI。目前已完成桌面外壳与基础界面，下载及媒体处理功能尚未集成。</p><p><sub>个人项目</sub></p><p><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-5af9230176ea.svg" alt="TypeScript" height="28"/> <img src="./assets/badges/tech-09dac051647e.svg" alt="Vite" height="28"/> <img src="./assets/badges/tech-1080f78958ad.svg" alt="Naive UI" height="28"/> <img src="./assets/badges/tech-d90fc3d91ab7.svg" alt="Neutralinojs" height="28"/></p><p></p></td></tr></tbody></table>
+<table><tbody><tr><td width="33%" valign="top" style="padding:16px"><p><sub>PROJECT 01 · 持续维护</sub></p><p><strong><a href="https://github.com/zshebjtzs/tree-grow-game">TreeGrow — Growth Tree: Graph Theory ↗</a></strong></p><p>一款围绕图结构与树生长机制设计的浏览器策略游戏，包含程序化 Voronoi 地图、PVP/PVE、交互式教程、存档读档与异步 AI 决策。</p><p><sub>个人项目</sub></p><p><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-65fbc96898c9.svg" alt="HTML5" height="28"/> <img src="./assets/badges/tech-6439894ddf3c.svg" alt="CSS3" height="28"/> <img src="./assets/badges/tech-c3bf8822c5be.svg" alt="Canvas 2D" height="28"/> <img src="./assets/badges/tech-86e96b3c64fb.svg" alt="d3-delaunay" height="28"/> <img src="./assets/badges/tech-6aa812d432b1.svg" alt="Web Worker" height="28"/></p><p><a href="https://zshebjtzs.github.io/tree-grow-game/">在线体验 ↗</a></p></td><td width="33%" valign="top" style="padding:16px"><p><sub>PROJECT 02 · 持续维护</sub></p><p><strong><a href="https://github.com/zshebjtzs/my-agent-skills">My Agent Skills ↗</a></strong></p><p>版本化管理的可复用 Agent Skills 库，配套双语检索门户，支持个人、社区、共享及外部来源的 Skills。</p><p><sub>个人项目</sub></p><p><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-9f74ecdefa06.svg" alt="VitePress" height="28"/> <img src="./assets/badges/tech-05c3b2746e0a.svg" alt="GitHub Actions" height="28"/> <img src="./assets/badges/tech-e6c2ada0ee18.svg" alt="GitHub Pages" height="28"/></p><p><a href="https://zshebjtzs.github.io/my-agent-skills/">在线体验 ↗</a></p></td><td width="33%" valign="top" style="padding:16px"><p><sub>PROJECT 03 · 开发中</sub></p><p><strong><a href="https://github.com/zshebjtzs/BiliFlow">BiliFlow ↗</a></strong></p><p>基于 Vue 3、TypeScript、Vite、Naive UI 与 Neutralinojs 构建的轻量 Windows yt-dlp 桌面 GUI。目前已完成桌面外壳与基础界面，下载及媒体处理功能尚未集成。</p><p><sub>个人项目</sub></p><p><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-5af9230176ea.svg" alt="TypeScript" height="28"/> <img src="./assets/badges/tech-09dac051647e.svg" alt="Vite" height="28"/> <img src="./assets/badges/tech-1080f78958ad.svg" alt="Naive UI" height="28"/> <img src="./assets/badges/tech-d90fc3d91ab7.svg" alt="Neutralinojs" height="28"/></p><p></p></td></tr></tbody></table>
 
 <hr/>
 
 ## 其他项目
 
-<table><tbody><tr><td width="100%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 01</font> · 待确认</sub></p><p><strong><a href="https://github.com/zshebjtzs/qdezJDS">qdezJDS ↗</a></strong></p><p>一个基于 Vue 3 前端与 Node.js、Express、MySQL 后端构建的全栈社区平台，包含论坛、文件云、管理后台、身份认证、权限控制与通知功能。</p><p><sub>协作项目</sub></p><p><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-a197ede4918d.svg" alt="Express" height="28"/> <img src="./assets/badges/tech-0365abe41f9c.svg" alt="MySQL" height="28"/> <img src="./assets/badges/tech-e7975dd058c1.svg" alt="JWT" height="28"/> <img src="./assets/badges/tech-f7edf190153b.svg" alt="Vditor" height="28"/></p><p></p></td></tr></tbody></table>
+<table><tbody><tr><td width="100%" valign="top" style="padding:16px"><p><sub>PROJECT 01 · 待确认</sub></p><p><strong><a href="https://github.com/zshebjtzs/qdezJDS">qdezJDS ↗</a></strong></p><p>一个基于 Vue 3 前端与 Node.js、Express、MySQL 后端构建的全栈社区平台，包含论坛、文件云、管理后台、身份认证、权限控制与通知功能。</p><p><sub>协作项目</sub></p><p><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-a197ede4918d.svg" alt="Express" height="28"/> <img src="./assets/badges/tech-0365abe41f9c.svg" alt="MySQL" height="28"/> <img src="./assets/badges/tech-e7975dd058c1.svg" alt="JWT" height="28"/> <img src="./assets/badges/tech-f7edf190153b.svg" alt="Vditor" height="28"/></p><p></p></td></tr></tbody></table>
+
+<hr/>
+
+## 技术专题
+
+<table><tbody><tr><td><sub>TreeGrow</sub><br/><strong>AI 决策与搜索架构</strong><br/>通过 TreeGrow 适配器接入统一搜索引擎，结合迭代加深、Alpha-Beta/PVS、置换表与受控搜索预算。<br/><sub>搜索 · Alpha-Beta · PVS · 置换表</sub><br/><a href="https://github.com/zshebjtzs/tree-grow-game/pull/33">技术实现与证据 ↗</a></td></tr><tr><td><sub>TreeGrow</sub><br/><strong>战略局面评估</strong><br/>对扩张、防守、根安全、前线控制与多根协同进行多信号局面分析。<br/><sub>局面评估 · 空间分析 · 决策支持</sub><br/><a href="https://github.com/zshebjtzs/tree-grow-game/pull/36">技术实现与证据 ↗</a></td></tr><tr><td><sub>My Agent Skills</sub><br/><strong>版本化 Agent Skills 目录</strong><br/>通过声明式目录管理来源归属，提供双语检索、预览、下载与自动化校验。<br/><sub>目录设计 · 来源追踪 · 自动化</sub><br/><a href="https://github.com/zshebjtzs/my-agent-skills">技术实现与证据 ↗</a></td></tr></tbody></table>
+
+<hr/>
+
+## 开发历程
+
+<table><tbody><tr><td width="18%"><strong>2026-11-11</strong></td><td><strong>TreeGrow Windows 离线桌面版发布</strong><br/>完成基于 WebView2 的便携式 Windows 桌面构建、打包与 CI 冒烟测试。<br/><sub><a href="https://github.com/zshebjtzs/tree-grow-game/pull/4">查看交付证据 ↗</a></sub></td></tr><tr><td width="18%"><strong>2026-11-22</strong></td><td><strong>TreeGrow AI 决策架构重构</strong><br/>建立统一搜索架构与适配器边界，并完成六档 AI 难度升级。<br/><sub><a href="https://github.com/zshebjtzs/tree-grow-game/pull/33">查看交付证据 ↗</a></sub></td></tr><tr><td width="18%"><strong>2026-11-24</strong></td><td><strong>战略局面评估升级</strong><br/>增加针对扩张、防守、空间控制与多根协同的多信号战略分析。<br/><sub><a href="https://github.com/zshebjtzs/tree-grow-game/pull/36">查看交付证据 ↗</a></sub></td></tr></tbody></table>
+
+<hr/>
+
+## GitHub 活动
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/stats/overview.light.svg"/><img src="./assets/stats/overview.dark.svg" alt="GitHub 公开活动统计：提交、仓库、Stars 和 Pull Requests" width="100%"/></picture></p><p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/stats/languages.light.svg"/><img src="./assets/stats/languages.dark.svg" alt="按代码体积分布的主要编程语言" width="100%"/></picture></p><p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/stats/contributions.light.svg"/><img src="./assets/stats/contributions.dark.svg" alt="最近 365 天 GitHub 贡献热力图" width="100%"/></picture></p><p align="center"><sub>数据来自 GitHub REST / GraphQL API，定期缓存；提交数使用 GitHub 公开 Commit Search 统计。更新于 2026-11-27。</sub></p>
 
 <hr/>
 
@@ -61,18 +85,18 @@
 
 <hr/>
 
-## 里程碑
-
-里程碑仅在日期、证据与长期意义确认后归档。
-
-<hr/>
-
 ## 技术栈
 
 <p><sub><b>语言</b></sub><br/><img src="./assets/badges/tech-4ff8e42fb0a0.svg" alt="C++" height="28"/> <img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-5af9230176ea.svg" alt="TypeScript" height="28"/> <img src="./assets/badges/tech-65fbc96898c9.svg" alt="HTML5" height="28"/> <img src="./assets/badges/tech-6439894ddf3c.svg" alt="CSS3" height="28"/></p>
 <p><sub><b>框架与运行时</b></sub><br/><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-a197ede4918d.svg" alt="Express" height="28"/> <img src="./assets/badges/tech-09dac051647e.svg" alt="Vite" height="28"/> <img src="./assets/badges/tech-1080f78958ad.svg" alt="Naive UI" height="28"/> <img src="./assets/badges/tech-d90fc3d91ab7.svg" alt="Neutralinojs" height="28"/> <img src="./assets/badges/tech-9f74ecdefa06.svg" alt="VitePress" height="28"/></p>
 <p><sub><b>工具与基础设施</b></sub><br/><img src="./assets/badges/tech-5e2412e78c0e.svg" alt="Git" height="28"/> <img src="./assets/badges/tech-39228727dc9c.svg" alt="GitHub" height="28"/> <img src="./assets/badges/tech-05c3b2746e0a.svg" alt="GitHub Actions" height="28"/> <img src="./assets/badges/tech-e6c2ada0ee18.svg" alt="GitHub Pages" height="28"/></p>
 <p><sub><b>图形与数据</b></sub><br/><img src="./assets/badges/tech-c3bf8822c5be.svg" alt="Canvas 2D" height="28"/> <img src="./assets/badges/tech-86e96b3c64fb.svg" alt="d3-delaunay" height="28"/> <img src="./assets/badges/tech-0365abe41f9c.svg" alt="MySQL" height="28"/> <img src="./assets/badges/tech-e7975dd058c1.svg" alt="JWT" height="28"/> <img src="./assets/badges/tech-f7edf190153b.svg" alt="Vditor" height="28"/> <img src="./assets/badges/tech-6aa812d432b1.svg" alt="Web Worker" height="28"/></p>
+
+<hr/>
+
+## 技术实践领域
+
+<table><tbody><tr><td width="28%"><strong>项目实践</strong><br/><sub>已在实际发布或持续维护的项目中使用。</sub></td><td><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-5af9230176ea.svg" alt="TypeScript" height="28"/> <img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-65fbc96898c9.svg" alt="HTML5" height="28"/> <img src="./assets/badges/tech-6439894ddf3c.svg" alt="CSS3" height="28"/> <img src="./assets/badges/tech-c3bf8822c5be.svg" alt="Canvas 2D" height="28"/> <img src="./assets/badges/tech-09dac051647e.svg" alt="Vite" height="28"/> <img src="./assets/badges/tech-5e2412e78c0e.svg" alt="Git" height="28"/> <img src="./assets/badges/tech-05c3b2746e0a.svg" alt="GitHub Actions" height="28"/></td></tr><tr><td width="28%"><strong>核心基础</strong><br/><sub>具有持续学习与实际实现经验的领域。</sub></td><td><img src="./assets/badges/tech-4ff8e42fb0a0.svg" alt="C++" height="28"/> <img src="./assets/badges/tech-6ac13809ce44.svg" alt="数据结构" height="28"/> <img src="./assets/badges/tech-b14747dd5686.svg" alt="图论" height="28"/> <img src="./assets/badges/tech-448e2d4f7c16.svg" alt="算法" height="28"/></td></tr><tr><td width="28%"><strong>持续探索</strong><br/><sub>正通过项目与实验持续探索的方向。</sub></td><td><img src="./assets/badges/tech-81fe9671a851.svg" alt="AI 辅助工程化" height="28"/> <img src="./assets/badges/tech-46405259cfc4.svg" alt="Agent 工作流" height="28"/> <img src="./assets/badges/tech-d2bc48338644.svg" alt="软件架构" height="28"/></td></tr></tbody></table>
 
 <hr/>
 
