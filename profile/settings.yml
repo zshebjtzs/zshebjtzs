@@ -22,6 +22,36 @@ profile:
     show_school: false
     show_precise_location: false
     show_age: false
+
+# Categories describe technology domains, not proficiency claims.
+tech_stack:
+  Languages:
+    - C++
+    - JavaScript
+    - TypeScript
+    - HTML5
+    - CSS3
+  Frameworks & Runtime:
+    - Vue 3
+    - Node.js
+    - Express
+    - Vite
+    - Naive UI
+    - Neutralinojs
+    - VitePress
+  Tools & Infrastructure:
+    - Git
+    - GitHub
+    - GitHub Actions
+    - GitHub Pages
+  Graphics & Data:
+    - Canvas 2D
+    - d3-delaunay
+    - MySQL
+    - JWT
+    - Vditor
+    - Web Worker
+
 automation:
   collect_schedule: weekly
   collect_scope:
