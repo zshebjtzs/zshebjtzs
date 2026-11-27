@@ -25,7 +25,9 @@ All great ideas and actions begin with a small, seemingly insignificant step.
 
 ## Current Focus
 
-<table><tbody><tr><td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #2B4052"><sub><b>PRIMARY</b></sub><p>Software Engineering<br/>Open-Source Development</p></td><td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #2B4052"><sub><b>SECONDARY</b></sub><p>Developer Tools<br/>AI-assisted Development<br/>Web and Desktop Applications</p></td><td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #2B4052"><sub><b>LONG-TERM</b></sub><p>Algorithms<br/>Computer Science</p></td></tr></tbody></table>
+<p><sub><b>PRIMARY</b></sub><br/><strong>Software Engineering · Open-Source Development</strong></p>
+<p><sub><b>SECONDARY</b></sub><br/><strong>Developer Tools · AI-assisted Development · Web and Desktop Applications</strong></p>
+<p><sub><b>LONG-TERM</b></sub><br/><strong>Algorithms · Computer Science</strong></p>
 
 <hr/>
 

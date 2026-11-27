@@ -25,7 +25,9 @@
 
 ## 当前关注
 
-<table><tbody><tr><td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #2B4052"><sub><b>主要方向</b></sub><p>软件工程<br/>开源开发</p></td><td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #2B4052"><sub><b>次要方向</b></sub><p>开发者工具<br/>AI 辅助开发<br/>Web 与桌面应用</p></td><td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #2B4052"><sub><b>长期兴趣</b></sub><p>算法<br/>计算机科学</p></td></tr></tbody></table>
+<p><sub><b>主要方向</b></sub><br/><strong>软件工程 · 开源开发</strong></p>
+<p><sub><b>次要方向</b></sub><br/><strong>开发者工具 · AI 辅助开发 · Web 与桌面应用</strong></p>
+<p><sub><b>长期兴趣</b></sub><br/><strong>算法 · 计算机科学</strong></p>
 
 <hr/>
 
