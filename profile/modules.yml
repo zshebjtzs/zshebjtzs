@@ -40,19 +40,15 @@ modules:
     enabled: true
   - id: technical_interests
     enabled: true
+  - id: featured_projects
+    enabled: true
+  - id: other_projects
+    enabled: true
   - id: deep_dives
     enabled: true
   - id: development_timeline
     enabled: true
-  - id: proficiency
-    enabled: true
-  - id: beyond_code
-    enabled: false
   - id: github_activity
-    enabled: true
-  - id: featured_projects
-    enabled: true
-  - id: other_projects
     enabled: true
   - id: contributions
     enabled: true
@@ -62,5 +58,9 @@ modules:
     enabled: true
   - id: tech_stack
     enabled: true
+  - id: proficiency
+    enabled: true
+  - id: beyond_code
+    enabled: false
   - id: activity_archive
     enabled: true
