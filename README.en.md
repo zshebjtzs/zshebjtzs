@@ -33,7 +33,7 @@ All great ideas and actions begin with a small, seemingly insignificant step.
 
 ## GitHub Activity
 
-<p align="center"><img src="./assets/stats/overview.svg" alt="GitHub public activity: commits, repositories, stars and pull requests" width="100%"/></p><p align="center"><img src="./assets/stats/languages.svg" alt="Most used languages by source-code bytes" width="100%"/></p><p align="center"><img src="./assets/stats/contributions.svg" alt="GitHub contribution activity during the last 365 days" width="100%"/></p><p align="center"><sub>Public data is cached from GitHub REST / GraphQL APIs. Commit count uses GitHub public commit search.</sub></p>
+<p align="center"><img src="./assets/stats/overview.svg" alt="GitHub public activity: commits, repositories, stars and pull requests" width="100%"/></p><p align="center"><img src="./assets/stats/languages.svg" alt="Most used languages by source-code bytes" width="100%"/></p><p align="center"><img src="./assets/stats/contributions.svg" alt="GitHub contribution activity during the last 365 days" width="100%"/></p><p align="center"><sub>Public data is cached from GitHub REST / GraphQL APIs. Commit count uses GitHub public commit search. Updated 2026-11-27.</sub></p>
 
 <hr/>
 

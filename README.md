@@ -33,7 +33,7 @@
 
 ## GitHub 活动
 
-<p align="center"><img src="./assets/stats/overview.svg" alt="GitHub 公开活动统计：提交、仓库、Stars 和 Pull Requests" width="100%"/></p><p align="center"><img src="./assets/stats/languages.svg" alt="按代码体积分布的主要编程语言" width="100%"/></p><p align="center"><img src="./assets/stats/contributions.svg" alt="最近 365 天 GitHub 贡献热力图" width="100%"/></p><p align="center"><sub>数据来自 GitHub REST / GraphQL API，定期缓存；提交数使用 GitHub 公开 Commit Search 统计。</sub></p>
+<p align="center"><img src="./assets/stats/overview.svg" alt="GitHub 公开活动统计：提交、仓库、Stars 和 Pull Requests" width="100%"/></p><p align="center"><img src="./assets/stats/languages.svg" alt="按代码体积分布的主要编程语言" width="100%"/></p><p align="center"><img src="./assets/stats/contributions.svg" alt="最近 365 天 GitHub 贡献热力图" width="100%"/></p><p align="center"><sub>数据来自 GitHub REST / GraphQL API，定期缓存；提交数使用 GitHub 公开 Commit Search 统计。更新于 2026-11-27。</sub></p>
 
 <hr/>
 
