@@ -1,4 +1,4 @@
-<!-- Generated file. Edit profile/*.yml and activity/records.yml instead. -->
+<!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
 # {{display_name}}
@@ -17,43 +17,7 @@
 
 ---
 
-## {{about_heading}}
-
-{{summary}}
-
-{{engineering_method}}
-
-## {{focus_heading}}
-
-{{current_focus}}
-
-## {{featured_heading}}
-
-{{featured_projects}}
-
-## {{other_heading}}
-
-{{other_projects}}
-
-## {{contributions_heading}}
-
-{{open_source_contributions}}
-
-## {{highlights_heading}}
-
-{{recent_highlights}}
-
-## {{milestones_heading}}
-
-{{milestones}}
-
-## {{stack_heading}}
-
-{{tech_stack}}
-
-## {{archive_heading}}
-
-{{archive_link}}
+{{modules}}
 
 ---
 
