@@ -17,6 +17,10 @@ def valid_url(value):
     parsed = urlparse(str(value))
     return parsed.scheme in {"https", "http"} and bool(parsed.netloc)
 
+def valid_hex_color(value):
+    value = str(value or "")
+    return len(value) == 6 and all(c in "0123456789abcdefABCDEF" for c in value)
+
 def main():
     identity = load_yaml("profile/identity.yml").get("identity", {})
     require(identity.get("username") == "zshebjtzs", "Unexpected profile username.")
@@ -40,8 +44,11 @@ def main():
         require(isinstance(module.get("enabled", True), bool), f"Invalid enabled flag for module: {module.get('id')}")
     presentation = module_config.get("presentation", {})
     require(1 <= int(presentation.get("project_columns", 2)) <= 3, "project_columns must be between 1 and 3.")
-    for key in ("stats_provider", "contribution_provider"):
+    for key in ("stats_provider", "contribution_provider", "badge_provider"):
         require(valid_url(presentation.get(key)), f"Invalid presentation provider URL: {key}")
+    for key in ("accent", "secondary_accent", "title_color", "text_color", "panel_color", "border_color", "badge_color", "badge_logo_color"):
+        require(valid_hex_color(presentation.get(key)), f"Invalid presentation color token: {key}")
+    require(presentation.get("badge_style", "flat-square") in {"flat", "flat-square", "plastic", "for-the-badge", "social"}, "Unsupported badge style.")
     records = load_yaml("activity/records.yml").get("activities", [])
     activity_ids = set()
     for a in records:

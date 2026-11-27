@@ -1,12 +1,21 @@
-# Module order and visibility are configuration, not template structure.
-# Add a renderer in scripts/generate_profile.py before registering a new module here.
+# Visual tokens are centralized here; renderers consume semantic tokens.
+# Change this section to retheme the profile without editing component code.
 presentation:
   username: zshebjtzs
   theme: transparent
-  accent: "6B9FE8"
+  accent: "79C0FF"
+  secondary_accent: "D29922"
+  title_color: "79C0FF"
+  text_color: "C9D1D9"
+  panel_color: "0D1117"
+  border_color: "30363D"
+  badge_color: "21262D"
+  badge_logo_color: "79C0FF"
+  badge_style: flat-square
   project_columns: 2
   stats_provider: https://github-readme-stats.vercel.app
   contribution_provider: https://ghchart.rshah.org
+  badge_provider: https://img.shields.io
 modules:
   - id: about
     enabled: true
