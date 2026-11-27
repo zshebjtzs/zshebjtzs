@@ -202,22 +202,23 @@ def render_about(summary, method_title, method_desc, lang, presentation):
         f'<p>{escape(method_desc)}</p>'
     )
 def render_focus_cards(groups, lang, presentation):
-    """Render three balanced focus columns with restrained separators."""
+    """Render focus areas as an editorial list, avoiding a default Markdown table grid."""
     labels = {
         "primary": ("主要方向", "PRIMARY"),
         "secondary": ("次要方向", "SECONDARY"),
         "long_term": ("长期兴趣", "LONG-TERM"),
     }
-    cells = []
+    rows = []
     for key in ("primary", "secondary", "long_term"):
         title = labels[key][0] if lang == "zh" else labels[key][1]
         values = groups.get(key, [])
-        body = "<br/>".join(escape(str(v)) for v in values) if values else "—"
-        cells.append(
-            f'<td width="33%" valign="top" style="padding:12px 16px;border-left:2px solid #{presentation.get("border_color", "2B4052")}">'
-            f'<sub><b>{title}</b></sub><p>{body}</p></td>'
+        if not values:
+            continue
+        body = " · ".join(escape(str(v)) for v in values)
+        rows.append(
+            f'<p><sub><b>{title}</b></sub><br/><strong>{body}</strong></p>'
         )
-    return '<table><tbody><tr>' + "".join(cells) + '</tr></tbody></table>'
+    return "\n".join(rows)
 def render_link_cards(items, lang, presentation, limit=8):
     if not items:
         return "暂无记录。" if lang == "zh" else "No records yet."
