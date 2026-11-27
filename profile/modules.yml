@@ -1,0 +1,23 @@
+# Presentation modules are data-driven: reorder, disable, or extend modules without
+# changing the page template. Module IDs map to renderers in generate_profile.py.
+modules:
+  - id: about
+    enabled: true
+  - id: focus
+    enabled: true
+  - id: github_activity
+    enabled: true
+  - id: featured_projects
+    enabled: true
+  - id: other_projects
+    enabled: true
+  - id: contributions
+    enabled: true
+  - id: highlights
+    enabled: true
+  - id: milestones
+    enabled: true
+  - id: tech_stack
+    enabled: true
+  - id: activity_archive
+    enabled: true
