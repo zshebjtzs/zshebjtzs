@@ -100,6 +100,12 @@
 
 <hr/>
 
+## Beyond Code
+
+<p><sub>OFF-DUTY DIRECTIVES</sub></p><p><strong>待机状态下的系统偏好。</strong></p><table><tbody><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / SCI FI FUTURISM</sub></p><p><strong>科幻与未来主义</strong></p><p>迷恋宏大叙事与冷酷的物理法则。关注技术、文明尺度与宇宙规律如何共同塑造未来。</p><p><sub>Speculative Futures · Cosmic Scale · Hard Science</sub></p></td></tr><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / SURREALIST NARRATIVE</sub></p><p><strong>超现实叙事</strong></p><p>偏爱规则怪谈、Meta 解构与阈限空间。尤其关注日常秩序出现微小偏差后，逐渐显露出的陌生感与隐含叙事。</p><p><sub>Rule-Based Horror · Meta Fiction · Liminal Spaces</sub></p></td></tr><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / GAME MECHANICS</sub></p><p><strong>游戏机制</strong></p><p>比起通关，更喜欢拆解系统底层的数值与状态机。关注规则、反馈、资源约束与玩家决策之间的因果关系。</p><p><sub>Systems Thinking · State Machines · Emergent Gameplay</sub></p></td></tr><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / VISUAL AESTHETICS</sub></p><p><strong>视觉审美</strong></p><p>探索冷色调、高对比度与极简主义构图，也关注低保真影像、摄影后期与视觉信息密度。</p><p><sub>Cool Tones · High Contrast · Minimalism · Lo-Fi</sub></p></td></tr><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / INTERACTIVE FICTION</sub></p><p><strong>交互式叙事与心理恐怖</strong></p><p>关注视觉小说、心理恐怖与模拟恐怖中的叙事结构，尤其喜欢作品打破第四面墙、质疑玩家与作品边界的表达。</p><p><sub>Visual Novels · Psychological Horror · Fourth-Wall Breaks</sub></p></td></tr><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / INTERNET CULTURE</sub></p><p><strong>网络文化与抽象表达</strong></p><p>对网络亚文化、荒诞表达与讽刺性梗图感兴趣，喜欢观察语境反差、符号错位与集体表达中的隐含逻辑。</p><p><sub>Internet Subcultures · Absurdism · Contextual Contrast</sub></p></td></tr><tr><td style="padding:14px 10px"><p><sub>OFF-DUTY DIRECTIVES / GEOSPATIAL EXPLORATION</sub></p><p><strong>地理与空间探索</strong></p><p>喜欢通过地图与卫星影像观察真实世界的空间结构，探索地理环境、城市形态与人类活动之间的联系。</p><p><sub>Maps · Satellite Imagery · Spatial Patterns</sub></p></td></tr></tbody></table>
+
+<hr/>
+
 ## 活动档案
 
 完整的已审核活动记录见 [activity/ACTIVITY.md](./activity/ACTIVITY.md)。
