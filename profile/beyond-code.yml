@@ -1,5 +1,51 @@
-# Reserved extension point for a future personal-interest section.
-# Intentionally empty: do not publish speculative interests until the user defines them.
+# Off-duty directives: personal interests beyond software engineering.
+# Each item is an independent content unit; add, reorder, or disable items without
+# changing the profile generator. Keep bilingual fields in sync.
 beyond_code:
-  enabled: false
-  items: []
+  enabled: true
+  eyebrow: "OFF-DUTY DIRECTIVES"
+  tagline_zh: "待机状态下的系统偏好。"
+  tagline_en: "System preferences when off duty."
+  items:
+    - id: sci-fi-futurism
+      title_zh: "科幻与未来主义"
+      title_en: "Sci-Fi & Futurism"
+      summary_zh: "迷恋宏大叙事与冷酷的物理法则。关注技术、文明尺度与宇宙规律如何共同塑造未来。"
+      summary_en: "Drawn to grand narratives and unforgiving physical laws—where technology, civilization-scale questions, and the rules of the universe shape possible futures."
+      tags: ["Speculative Futures", "Cosmic Scale", "Hard Science"]
+    - id: surrealist-narrative
+      title_zh: "超现实叙事"
+      title_en: "Surrealist Narrative"
+      summary_zh: "偏爱规则怪谈、Meta 解构与阈限空间。尤其关注日常秩序出现微小偏差后，逐渐显露出的陌生感与隐含叙事。"
+      summary_en: "Interested in rule-based horror, meta deconstruction, and liminal spaces—especially how tiny deviations in familiar systems reveal unease and hidden narratives."
+      tags: ["Rule-Based Horror", "Meta Fiction", "Liminal Spaces"]
+    - id: game-mechanics
+      title_zh: "游戏机制"
+      title_en: "Game Mechanics"
+      summary_zh: "比起通关，更喜欢拆解系统底层的数值与状态机。关注规则、反馈、资源约束与玩家决策之间的因果关系。"
+      summary_en: "More interested in dissecting the numbers and state machines beneath a game than simply finishing it: rules, feedback, resource constraints, and decision-making."
+      tags: ["Systems Thinking", "State Machines", "Emergent Gameplay"]
+    - id: visual-aesthetics
+      title_zh: "视觉审美"
+      title_en: "Visual Aesthetics"
+      summary_zh: "探索冷色调、高对比度与极简主义构图，也关注低保真影像、摄影后期与视觉信息密度。"
+      summary_en: "Exploring cool palettes, high contrast, and minimalist composition, alongside lo-fi imagery, photo post-processing, and visual information density."
+      tags: ["Cool Tones", "High Contrast", "Minimalism", "Lo-Fi"]
+    - id: interactive-fiction
+      title_zh: "交互式叙事与心理恐怖"
+      title_en: "Interactive Fiction & Psychological Horror"
+      summary_zh: "关注视觉小说、心理恐怖与模拟恐怖中的叙事结构，尤其喜欢作品打破第四面墙、质疑玩家与作品边界的表达。"
+      summary_en: "Interested in visual novels, psychological horror, and simulation horror—particularly stories that break the fourth wall and question the boundary between player and work."
+      tags: ["Visual Novels", "Psychological Horror", "Fourth-Wall Breaks"]
+    - id: internet-culture
+      title_zh: "网络文化与抽象表达"
+      title_en: "Internet Culture & Absurdist Expression"
+      summary_zh: "对网络亚文化、荒诞表达与讽刺性梗图感兴趣，喜欢观察语境反差、符号错位与集体表达中的隐含逻辑。"
+      summary_en: "Interested in internet subcultures, absurdist expression, and satirical memes—especially contextual contrast, displaced symbols, and the hidden logic of collective expression."
+      tags: ["Internet Subcultures", "Absurdism", "Contextual Contrast"]
+    - id: geospatial-exploration
+      title_zh: "地理与空间探索"
+      title_en: "Geospatial Exploration"
+      summary_zh: "喜欢通过地图与卫星影像观察真实世界的空间结构，探索地理环境、城市形态与人类活动之间的联系。"
+      summary_en: "Enjoys exploring real-world spatial patterns through maps and satellite imagery, connecting geography, urban form, and human activity."
+      tags: ["Maps", "Satellite Imagery", "Spatial Patterns"]

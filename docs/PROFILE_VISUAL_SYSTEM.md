@@ -70,3 +70,13 @@ Technology groups describe domains, not skill levels. Add or remove technologies
 The README uses `<picture>` with `prefers-color-scheme` to select repository-hosted dark or light SVG assets. GitHub controls the surrounding page background; README content cannot override the site's global background. Visual panels therefore avoid hard-coded dark HTML backgrounds and adapt to the host theme, while SVG components have separate palettes.
 
 Add new theme tokens under `presentation.light_palette` and keep both variants generated from the same component functions.
+
+
+## Beyond Code
+
+The Beyond Code section is a first-class, data-driven module. Its source of truth is
+`profile/beyond-code.yml`. Each item has a stable `id`, bilingual title and summary,
+and a short set of thematic tags. The module is enabled independently through
+`profile/modules.yml`. Add, reorder, or remove interests in YAML; do not hardcode
+personal-interest content in the generator. Keep the section descriptive rather than
+turning it into a personality test or an exhaustive biography.
