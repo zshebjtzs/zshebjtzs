@@ -1,4 +1,4 @@
-<!-- Generated file. Edit profile/*.yml and activity/records.yml instead. -->
+<!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
 # ZSHEBJTZS
@@ -38,52 +38,23 @@ Exploring software engineering and building practical software through open-sour
 - Algorithms
 - Computer Science
 
+## GitHub Activity
+
+<table><tr><td width="50%" valign="top"><img src="https://github-readme-stats.vercel.app/api?username=zshebjtzs&show_icons=true&hide_border=true&theme=transparent&include_all_commits=true" alt="GitHub statistics" width="100%"/></td><td width="50%" valign="top"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zshebjtzs&layout=compact&hide_border=true&theme=transparent&langs_count=8" alt="Most used languages" width="100%"/></td></tr></table>
+<p align="center"><img src="https://ghchart.rshah.org/6B9FE8/zshebjtzs" alt="GitHub contribution graph" width="100%"/></p><sub>Statistics are provided by external services and may be temporarily unavailable.</sub>
+
 ## Featured Projects
 
-### [TreeGrow — Growth Tree: Graph Theory](https://github.com/zshebjtzs/tree-grow-game) · [Live Demo](https://zshebjtzs.github.io/tree-grow-game/)
-
-A browser-based strategy game built around graph topology and tree growth, featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load, and asynchronous AI decision-making.
-
-`Maintained` · Personal Project
-
-- Procedural Voronoi map generation and graph adjacency construction
-- Modular game state, rule validation, combat resolution, and rendering
-- AI search with iterative deepening, Alpha-Beta/PVS, and transposition tables
-- Six AI difficulty levels with bounded search budgets
-- GitHub Pages deployment and Windows offline distribution
-
-### [My Agent Skills](https://github.com/zshebjtzs/my-agent-skills) · [Live Demo](https://zshebjtzs.github.io/my-agent-skills/)
-
-A version-controlled library of reusable agent Skills, paired with a searchable bilingual portal for personal, community, shared, and external Skills.
-
-`Maintained` · Personal Project
-
-- Bilingual documentation portal with full-text search
-- Declarative external Skill catalog and source attribution
-- Per-Skill previews and ZIP downloads
-- Automated validation and deployment workflows
-
-### [BiliFlow](https://github.com/zshebjtzs/BiliFlow)
-
-A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are in place; download and media-processing features are not yet integrated.
-
-`In Development` · Personal Project
-
-- Lightweight Windows desktop shell
-- Vue-based interface and development workflow
-- Portable desktop packaging
+<table>
+<tr><td width="50%" valign="top"><h3><a href="https://github.com/zshebjtzs/tree-grow-game">TreeGrow — Growth Tree: Graph Theory</a></h3><p>A browser-based strategy game built around graph topology and tree growth, featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load, and asynchronous AI decision-making.</p><p><sub>Maintained · Personal Project</sub></p><p><sub>JavaScript · HTML5 · CSS3 · Canvas 2D</sub></p><p><img src="https://img.shields.io/github/stars/zshebjtzs/tree-grow-game?style=flat-square&label=Stars" alt="GitHub stars"/> · <a href="https://zshebjtzs.github.io/tree-grow-game/">Live Demo</a></p></td><td width="50%" valign="top"><h3><a href="https://github.com/zshebjtzs/my-agent-skills">My Agent Skills</a></h3><p>A version-controlled library of reusable agent Skills, paired with a searchable bilingual portal for personal, community, shared, and external Skills.</p><p><sub>Maintained · Personal Project</sub></p><p><sub>JavaScript · Node.js · VitePress · GitHub Actions</sub></p><p><img src="https://img.shields.io/github/stars/zshebjtzs/my-agent-skills?style=flat-square&label=Stars" alt="GitHub stars"/> · <a href="https://zshebjtzs.github.io/my-agent-skills/">Live Demo</a></p></td></tr>
+<tr><td width="50%" valign="top"><h3><a href="https://github.com/zshebjtzs/BiliFlow">BiliFlow</a></h3><p>A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are in place; download and media-processing features are not yet integrated.</p><p><sub>In Development · Personal Project</sub></p><p><sub>Vue 3 · TypeScript · Vite · Naive UI</sub></p><p><img src="https://img.shields.io/github/stars/zshebjtzs/BiliFlow?style=flat-square&label=Stars" alt="GitHub stars"/></p></td><td width="50%"></td></tr>
+</table>
 
 ## Other Projects
 
-### [qdezJDS](https://github.com/zshebjtzs/qdezJDS)
-
-A full-stack community platform with a Vue 3 frontend and a Node.js, Express, and MySQL backend, including forums, file storage, administration, authentication, permissions, and notifications.
-
-`Needs Review` · Collaboration
-
-- Modular frontend and backend structure
-- Forum, file storage, and administration modules
-- Authentication, permission controls, and security protections
+<table>
+<tr><td width="50%" valign="top"><h3><a href="https://github.com/zshebjtzs/qdezJDS">qdezJDS</a></h3><p>A full-stack community platform with a Vue 3 frontend and a Node.js, Express, and MySQL backend, including forums, file storage, administration, authentication, permissions, and notifications.</p><p><sub>Needs Review · Collaboration</sub></p><p><sub>Vue 3 · Node.js · Express · MySQL</sub></p><p><img src="https://img.shields.io/github/stars/zshebjtzs/qdezJDS?style=flat-square&label=Stars" alt="GitHub stars"/></p></td><td width="50%"></td></tr>
+</table>
 
 ## Open-Source Contributions
 
