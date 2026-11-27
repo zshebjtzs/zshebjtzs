@@ -1,0 +1,30 @@
+# Technical interests based on the user's established project and learning context.
+interests:
+  - id: software-architecture
+    title: Software Architecture
+    title_zh: 软件架构
+    summary: Modular systems, separation of concerns, maintainability, and practical delivery.
+    summary_zh: 模块化系统、职责分离、可维护性与工程交付。
+    tags: [Modularity, Maintainability, System Design]
+    tags_zh: [模块化, 可维护性, 系统设计]
+  - id: algorithms-and-graphs
+    title: Algorithms & Graph Theory
+    title_zh: 算法与图论
+    summary: Data structures, graph models, search, and decision-making algorithms.
+    summary_zh: 数据结构、图模型、搜索与决策算法。
+    tags: [Data Structures, Graph Theory, Search]
+    tags_zh: [数据结构, 图论, 搜索算法]
+  - id: developer-tools
+    title: Developer Tools & Automation
+    title_zh: 开发者工具与自动化
+    summary: Reusable tooling, agent workflows, CI validation, and documentation systems.
+    summary_zh: 可复用工具、Agent 工作流、CI 校验与文档系统。
+    tags: [Developer Experience, Agent Skills, CI/CD]
+    tags_zh: [开发者体验, Agent Skills, CI/CD]
+  - id: interactive-software
+    title: Interactive & Desktop Software
+    title_zh: 交互式与桌面软件
+    summary: Browser-based experiences, Canvas rendering, desktop packaging, and asynchronous workers.
+    summary_zh: 浏览器交互体验、Canvas 渲染、桌面封装与异步 Worker。
+    tags: [Web, Canvas, Desktop]
+    tags_zh: [Web, Canvas, 桌面应用]
