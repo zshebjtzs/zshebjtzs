@@ -44,7 +44,7 @@ def main():
         require(isinstance(module.get("enabled", True), bool), f"Invalid enabled flag for module: {module.get('id')}")
     presentation = module_config.get("presentation", {})
     require(1 <= int(presentation.get("project_columns", 2)) <= 3, "project_columns must be between 1 and 3.")
-    for key in ("accent", "secondary_accent", "title_color", "text_color", "muted_color", "panel_color", "panel_alt_color", "border_color"):
+    for key in ("accent", "secondary_accent", "title_color", "text_color", "muted_color", "page_bg", "panel_color", "panel_alt_color", "border_color"):
         require(valid_hex_color(presentation.get(key)), f"Invalid presentation color token: {key}")
     stack = load_yaml("profile/settings.yml").get("tech_stack", {})
     require(isinstance(stack, dict) and bool(stack), "Technology stack must define at least one category.")
