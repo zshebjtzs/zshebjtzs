@@ -1,0 +1,5 @@
+# Reserved extension point for a future personal-interest section.
+# Intentionally empty: do not publish speculative interests until the user defines them.
+beyond_code:
+  enabled: false
+  items: []
