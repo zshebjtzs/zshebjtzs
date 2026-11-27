@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "username": "zshebjtzs",
+  "generated_at": null,
+  "source": "GitHub REST and GraphQL APIs; public data only",
+  "metrics": {
+    "total_commits": null,
+    "total_pull_requests": null,
+    "total_issues": null,
+    "public_repositories": null,
+    "stars": null,
+    "forks": null,
+    "followers": null,
+    "yearly_contributions": null
+  },
+  "languages": {},
+  "contributions": {
+    "total": 0,
+    "days": []
+  }
+}
