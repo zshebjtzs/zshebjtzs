@@ -4,6 +4,7 @@ from common import ROOT, load_yaml
 from html import escape
 import hashlib
 import json
+from pathlib import Path
 
 BADGE_MAP_PATH = ROOT / "data" / "tech-badges.json"
 BADGE_DIR = ROOT / "assets" / "badges"
