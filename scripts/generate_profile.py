@@ -37,15 +37,12 @@ def render_project(p, lang):
         line += "\n\n" + "\n".join(f"- {x}" for x in highlights)
     return line
 
-def badge(label, value, color, presentation):
+def badge(label, color, presentation):
     base = presentation.get("badge_provider", "https://img.shields.io")
     style = presentation.get("badge_style", "flat-square")
     logo = presentation.get("badge_logo_color", "79C0FF")
-    url = (
-        f"{base}/badge/{quote(str(label), safe='')} -{quote(str(value), safe='')}"
-        f"-{quote(str(color), safe='')}?style={quote(style)}&logoColor={quote(logo)}"
-    ).replace("%20-", "-")
-    return f'<img src="{escape(url)}" alt="{escape(str(label) + ": " + str(value))}" height="20"/>'
+    url = f"{base}/badge/{quote(str(label), safe='')}-{quote(str(color), safe='')}?style={quote(style)}&logoColor={quote(logo)}"
+    return f'<img src="{escape(url)}" alt="{escape(str(label))}" height="20"/>'
 
 def render_project_cards(items, lang, columns=2, presentation=None):
     """Render consistent project cards from reviewed project data."""
@@ -69,7 +66,7 @@ def render_project_cards(items, lang, columns=2, presentation=None):
             "协作项目" if lang == "zh" and p.get("project_type") == "Collaboration" else p.get("project_type", "Project")
         )
         tech = " ".join(
-            badge(t, "", presentation.get("badge_color", "21262D"), presentation)
+            badge(t, presentation.get("badge_color", "21262D"), presentation)
             for t in p.get("technologies", [])[:5]
         )
         demo = p.get("demo")
@@ -178,7 +175,7 @@ def render_stack(stack, lang, presentation):
     for level, values in stack.items():
         if not values:
             continue
-        badges = " ".join(badge(v, "", colors.get(level, "21262D"), presentation) for v in values)
+        badges = " ".join(badge(v, colors.get(level, "21262D"), presentation) for v in values)
         rows.append(
             f'<tr><td width="18%" valign="top"><sub><b>{labels.get(level, level)}</b></sub></td>'
             f'<td>{badges}</td></tr>'
@@ -228,11 +225,17 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     ) or ("里程碑仅在日期、证据与长期意义确认后归档。" if zh else "Milestones are archived only after their date, evidence, and long-term significance are verified.")
     stack_md = render_stack(stack, lang, presentation)
     links = identity.get("links", {})
-    social = " · ".join(
-        md_link(label, links.get(key))
-        for label, key in [("GitHub", "github"), ("Luogu", "luogu"), ("Bilibili", "bilibili"), ("X", "x")]
-        if links.get(key)
-    )
+    social_badges = []
+    for label, key, logo in [
+        ("GitHub", "github", "github"), ("Luogu", "luogu", ""),
+        ("Bilibili", "bilibili", "bilibili"), ("X", "x", "x")
+    ]:
+        url = links.get(key)
+        if url:
+            color = presentation.get("badge_color", "21262D")
+            badge_url = f'{presentation.get("badge_provider", "https://img.shields.io")}/badge/{quote(label)}-{color}?style={quote(presentation.get("badge_style", "flat-square"))}&logo={quote(logo)}&logoColor={presentation.get("accent", "79C0FF")}'
+            social_badges.append(f'<a href="{escape(url)}"><img src="{badge_url}" alt="{label}" height="24"/></a>')
+    social = " &nbsp; ".join(social_badges)
     archive_link = "[activity/ACTIVITY.md](./activity/ACTIVITY.md)" if zh else "[activity/ACTIVITY.en.md](./activity/ACTIVITY.en.md)"
     archive_sentence = "完整的已审核活动记录见" if zh else "Browse the complete reviewed activity archive:"
     module_titles = {
@@ -253,7 +256,7 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     }
     module_config = module_config.get("modules", [])
     enabled_modules = [m for m in module_config if m.get("enabled", True)]
-    modules_md = "\n\n".join(
+    modules_md = "\n\n<hr/>\n\n".join(
         f"## {module_titles[m['id']]}\n\n{module_bodies[m['id']]}"
         for m in enabled_modules if m.get("id") in module_titles
     )
@@ -263,7 +266,11 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "{{domains}}": " · ".join(identity.get("domains_zh" if zh else "domains_en") or identity.get("domains", [])),
         "{{bio}}": identity.get("bio", "") if zh else identity.get("bio_en", identity.get("bio", "")),
         "{{social_links}}": social,
-        "{{language_switch}}": "**简体中文** · [English](./README.en.md)" if zh else "[简体中文](./README.md) · **English**",
+        "{{language_switch}}": (
+            f'<a href="./README.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/简体中文-{presentation.get("accent", "79C0FF")}?style=flat-square" alt="简体中文"/></a> &nbsp; <a href="./README.en.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/English-{presentation.get("badge_color", "21262D")}?style=flat-square" alt="English"/></a>'
+        ) if zh else (
+            f'<a href="./README.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/简体中文-{presentation.get("badge_color", "21262D")}?style=flat-square" alt="简体中文"/></a> &nbsp; <a href="./README.en.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/English-{presentation.get("accent", "79C0FF")}?style=flat-square" alt="English"/></a>'
+        ),
         "{{modules}}": modules_md,
         "{{about_heading}}": labels["about_heading"],
         "{{focus_heading}}": labels["focus_heading"],
