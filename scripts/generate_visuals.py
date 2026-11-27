@@ -44,6 +44,7 @@ def generate_badges(stack):
     names = []
     for group in stack.values():
         names.extend(group or [])
+    mapping = {}
     for name in dict.fromkeys(names):
         color, path = LOGOS.get(name, (BRANDS.get(name, "496579"), None))
         fg = "#17212B" if name == "JavaScript" else "#FFFFFF"
@@ -52,12 +53,15 @@ def generate_badges(stack):
         label = escape(name)
         width = max(74, 34 + len(name) * 7)
         digest = hashlib.sha1(f"shields-flat|{name}|{color}|{path or ''}".encode()).hexdigest()[:12]
+        filename = f"tech-{digest}.svg"
         svg = (svg_start(width, 28, name) +
                f'<rect width="{width}" height="28" rx="3" fill="#{color}"/>'
                f'<svg x="6" y="6" width="16" height="16" viewBox="0 0 24 24">{icon}</svg>'
                f'<text x="28" y="18.5" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11.5" font-weight="600" fill="{fg}">{label}</text>'
                '</svg>')
-        write(BADGE_DIR / f"tech-{digest}.svg", svg)
+        write(BADGE_DIR / filename, svg)
+        mapping[name] = filename
+    write(ROOT / "data" / "tech-badges.json", json.dumps(mapping, ensure_ascii=False, indent=2))
 
 def generate_hero():
     svg = svg_start(1200, 154, "Tech-Dawn developer profile identity banner")
@@ -70,39 +74,52 @@ def generate_hero():
     svg += f'<text x="42" y="118" font-family="Verdana,DejaVu Sans,sans-serif" font-size="14" letter-spacing="1.2" fill="{PALETTE["muted"]}">BUILD · ITERATE · SHARE</text></svg>'
     write(PROFILE_DIR / "hero.svg", svg)
 
-def generate_about():
-    steps = [("01","需求分析","REQUIREMENTS"),("02","架构设计","ARCHITECTURE"),("03","工程实现","IMPLEMENTATION"),("04","调试测试","TESTING"),("05","交付维护","DELIVERY")]
+def generate_about(lang):
+    zh = lang == "zh"
+    steps = (
+        [("01","需求分析","REQUIREMENTS"),("02","架构设计","ARCHITECTURE"),("03","工程实现","IMPLEMENTATION"),("04","调试测试","TESTING"),("05","交付维护","DELIVERY")]
+        if zh else
+        [("01","Requirements","需求分析"),("02","Architecture","架构设计"),("03","Implementation","工程实现"),("04","Testing","调试测试"),("05","Delivery","交付维护")]
+    )
     svg = svg_start(1100, 190, "AI-assisted software engineering workflow")
     svg += f'<rect width="1100" height="190" rx="8" fill="{PALETTE["bg"]}"/>'
     svg += f'<text x="24" y="29" font-family="Verdana,sans-serif" font-size="12" letter-spacing="2" fill="{PALETTE["cyan"]}">ENGINEERING WORKFLOW</text>'
-    for i,(num,zh,en) in enumerate(steps):
+    for i,(num,main,sub) in enumerate(steps):
         x=24+i*216
         svg += f'<rect x="{x}" y="52" width="190" height="106" rx="6" fill="{PALETTE["panel"]}" stroke="{PALETTE["border"]}"/>'
         svg += f'<text x="{x+14}" y="78" font-family="Verdana,sans-serif" font-size="12" fill="{PALETTE["orange"]}">{num}</text>'
-        svg += f'<text x="{x+14}" y="108" font-family="Verdana,DejaVu Sans,sans-serif" font-size="17" font-weight="700" fill="{PALETTE["text"]}">{zh}</text>'
-        svg += f'<text x="{x+14}" y="133" font-family="Verdana,sans-serif" font-size="10" letter-spacing=".6" fill="{PALETTE["muted"]}">{en}</text>'
+        svg += f'<text x="{x+14}" y="108" font-family="Verdana,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="{PALETTE["text"]}">{escape(main)}</text>'
+        svg += f'<text x="{x+14}" y="133" font-family="Verdana,sans-serif" font-size="10" letter-spacing=".6" fill="{PALETTE["muted"]}">{escape(sub)}</text>'
         if i<4:
             svg += f'<path d="M{x+194} 105h12m-4 -4 4 4-4 4" fill="none" stroke="{PALETTE["cyan"]}" stroke-width="1.5"/>'
     svg += '</svg>'
-    write(PROFILE_DIR / "about.svg", svg)
+    write(PROFILE_DIR / f"about.{'en' if lang == 'en' else 'zh'}.svg", svg)
 
-def generate_focus():
+def generate_focus(lang):
+    with (ROOT / "profile" / "current-focus.yml").open(encoding="utf-8") as handle:
+        focus = yaml.safe_load(handle) or {}
+    zh = lang == "zh"
     groups = [
-        ("01","CORE","核心方向","软件工程 · 开源开发"),
-        ("02","PRACTICE","次要方向","开发者工具 · AI 辅助开发 · Web 与桌面应用"),
-        ("03","EXPLORE","长期兴趣","算法 · 计算机科学"),
+        ("01","CORE","核心方向",focus.get("primary_focus_zh" if zh else "primary_focus",[])),
+        ("02","PRACTICE","次要方向",focus.get("secondary_interests_zh" if zh else "secondary_interests",[])),
+        ("03","EXPLORE","长期兴趣",focus.get("long_term_interests_zh" if zh else "long_term_interests",[])),
     ]
     svg=svg_start(1100,190,"Current focus areas")
     svg+=f'<rect width="1100" height="190" rx="8" fill="{PALETTE["bg"]}"/>'
-    for i,(num,en,zh,body) in enumerate(groups):
+    for i,(num,en,label,values) in enumerate(groups):
         x=24+i*360
+        title = label if zh else en
         svg+=f'<rect x="{x}" y="16" width="336" height="154" rx="7" fill="{PALETTE["panel"]}" stroke="{PALETTE["border"]}"/>'
         svg+=f'<rect x="{x}" y="16" width="3" height="154" rx="1.5" fill="{PALETTE["cyan"] if i<2 else PALETTE["orange"]}"/>'
         svg+=f'<text x="{x+18}" y="45" font-family="Verdana,sans-serif" font-size="11" letter-spacing="1.5" fill="{PALETTE["muted"]}">{num} / {en}</text>'
-        svg+=f'<text x="{x+18}" y="82" font-family="Verdana,DejaVu Sans,sans-serif" font-size="20" font-weight="700" fill="{PALETTE["text"]}">{zh}</text>'
-        svg+=f'<foreignObject x="{x+18}" y="98" width="300" height="58"><div xmlns="http://www.w3.org/1999/xhtml" style="font:13px Verdana,'DejaVu Sans',sans-serif;color:{PALETTE["muted"]};line-height:1.55">{escape(body)}</div></foreignObject>'
+        svg+=f'<text x="{x+18}" y="82" font-family="Verdana,DejaVu Sans,sans-serif" font-size="20" font-weight="700" fill="{PALETTE["text"]}">{escape(title)}</text>'
+        lines = []
+        for value in values:
+            lines.extend([value[j:j+19] for j in range(0,len(value),19)] or [""])
+        for j,line in enumerate(lines[:3]):
+            svg+=f'<text x="{x+18}" y="{111+j*19}" font-family="Verdana,DejaVu Sans,sans-serif" font-size="12" fill="{PALETTE["muted"]}">{escape(line)}</text>'
     svg+='</svg>'
-    write(PROFILE_DIR / "focus.svg",svg)
+    write(PROFILE_DIR / f"focus.{'en' if lang == 'en' else 'zh'}.svg",svg)
 
 def generate_stats(stats):
     metrics=stats.get("metrics",{})
@@ -177,8 +194,10 @@ def main():
     stack=settings.get("tech_stack",{})
     generate_badges(stack)
     generate_hero()
-    generate_about()
-    generate_focus()
+    generate_about("zh")
+    generate_about("en")
+    generate_focus("zh")
+    generate_focus("en")
     stats_path=ROOT/"data/stats.json"
     stats=json.loads(stats_path.read_text(encoding="utf-8")) if stats_path.exists() else {}
     generate_stats(stats)
