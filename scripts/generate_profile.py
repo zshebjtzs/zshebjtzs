@@ -69,13 +69,17 @@ def render_project_cards(items, lang, columns=2):
         rows.append("<tr>" + "".join(row) + "</tr>")
     return '<table>\n' + "\n".join(rows) + '\n</table>' if rows else ("暂无项目。" if lang == "zh" else "No projects yet.")
 
-def render_github_activity(lang):
+def render_github_activity(lang, presentation=None):
     """Third-party SVG cards are optional visual enhancements, not data dependencies."""
-    username = "zshebjtzs"
-    theme = "transparent"
-    stats = f"https://github-readme-stats.vercel.app/api?username={username}&show_icons=true&hide_border=true&theme=transparent&include_all_commits=true"
-    langs = f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact&hide_border=true&theme=transparent&langs_count=8"
-    chart = f"https://ghchart.rshah.org/6B9FE8/{username}"
+    presentation = presentation or {}
+    username = presentation.get("username", "zshebjtzs")
+    theme = presentation.get("theme", "transparent")
+    accent = presentation.get("accent", "6B9FE8")
+    stats_base = presentation.get("stats_provider", "https://github-readme-stats.vercel.app")
+    chart_base = presentation.get("contribution_provider", "https://ghchart.rshah.org")
+    stats = f"{stats_base}/api?username={username}&show_icons=true&hide_border=true&theme={theme}&include_all_commits=true"
+    langs = f"{stats_base}/api/top-langs/?username={username}&layout=compact&hide_border=true&theme={theme}&langs_count=8"
+    chart = f"{chart_base}/{accent}/{username}"
     alt_stats = "GitHub statistics" if lang == "en" else "GitHub 统计数据"
     alt_langs = "Most used languages" if lang == "en" else "主要编程语言"
     alt_chart = "GitHub contribution graph" if lang == "en" else "GitHub 贡献热力图"
@@ -88,6 +92,9 @@ def render_github_activity(lang):
 
 def build_page(lang, identity, focus, projects, records, milestones, stack, template):
     zh = lang == "zh"
+    module_config = load_yaml("profile/modules.yml")
+    presentation = module_config.get("presentation", {})
+    project_columns = max(1, min(3, int(presentation.get("project_columns", 2))))
     labels = {
         "about_heading": "关于我" if zh else "About",
         "focus_heading": "当前关注" if zh else "Current Focus",
@@ -114,8 +121,8 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     method_md = f"**{method_title}** — {method_desc}"
     featured = sorted([p for p in projects if p.get("visibility") == "featured"], key=lambda p: p.get("order", 999))
     others = sorted([p for p in projects if p.get("visibility") == "other"], key=lambda p: p.get("order", 999))
-    featured_md = render_project_cards(featured, lang, columns=2)
-    others_md = render_project_cards(others, lang, columns=2)
+    featured_md = render_project_cards(featured, lang, columns=project_columns)
+    others_md = render_project_cards(others, lang, columns=project_columns)
     contributions = [a for a in records if a.get("type") in {"pull_request", "issue", "review"}]
     contributions_md = "\n".join(
         f"- [{localized(a, 'title', lang, 'Contribution')}]({a.get('url', '#')}) · {a.get('repository', '')}"
@@ -159,13 +166,13 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     }
     module_bodies = {
         "about": f"{identity.get('summary_zh' if zh else 'summary_en') or identity.get('summary', '')}\n\n{method_md}",
-        "focus": focus_md, "github_activity": render_github_activity(lang),
+        "focus": focus_md, "github_activity": render_github_activity(lang, presentation),
         "featured_projects": featured_md, "other_projects": others_md,
         "contributions": contributions_md, "highlights": highlights_md,
         "milestones": milestone_md, "tech_stack": stack_md,
         "activity_archive": f"{archive_sentence} {archive_link}。" if zh else f"{archive_sentence} {archive_link}.",
     }
-    module_config = load_yaml("profile/modules.yml").get("modules", [])
+    module_config = module_config.get("modules", [])
     enabled_modules = [m for m in module_config if m.get("enabled", True)]
     modules_md = "\n\n".join(
         f"## {module_titles[m['id']]}\n\n{module_bodies[m['id']]}"
