@@ -1,0 +1,30 @@
+# Module order and visibility are configuration, not template structure.
+# Add a renderer in scripts/generate_profile.py before registering a new module here.
+presentation:
+  username: zshebjtzs
+  theme: transparent
+  accent: "6B9FE8"
+  project_columns: 2
+  stats_provider: https://github-readme-stats.vercel.app
+  contribution_provider: https://ghchart.rshah.org
+modules:
+  - id: about
+    enabled: true
+  - id: focus
+    enabled: true
+  - id: github_activity
+    enabled: true
+  - id: featured_projects
+    enabled: true
+  - id: other_projects
+    enabled: true
+  - id: contributions
+    enabled: true
+  - id: highlights
+    enabled: true
+  - id: milestones
+    enabled: true
+  - id: tech_stack
+    enabled: true
+  - id: activity_archive
+    enabled: true

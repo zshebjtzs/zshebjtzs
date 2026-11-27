@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 from common import load_yaml
 
 ALLOWED_VISIBILITY = {"featured", "other", "draft"}
+ALLOWED_MODULES = {"about", "focus", "github_activity", "featured_projects", "other_projects", "contributions", "highlights", "milestones", "tech_stack", "activity_archive"}
 
 def require(condition, message):
     if not condition:
@@ -30,6 +31,17 @@ def main():
         require(p.get("visibility") in ALLOWED_VISIBILITY, f"Invalid visibility for {p.get('id')}")
         require(valid_url(p.get("repository")), f"Invalid repository URL for {p.get('id')}")
         require(valid_url(p.get("demo")), f"Invalid demo URL for {p.get('id')}")
+    module_config = load_yaml("profile/modules.yml")
+    modules = module_config.get("modules", [])
+    module_ids = [m.get("id") for m in modules]
+    require(len(module_ids) == len(set(module_ids)), "Duplicate presentation module id.")
+    for module in modules:
+        require(module.get("id") in ALLOWED_MODULES, f"Unknown presentation module: {module.get('id')}")
+        require(isinstance(module.get("enabled", True), bool), f"Invalid enabled flag for module: {module.get('id')}")
+    presentation = module_config.get("presentation", {})
+    require(1 <= int(presentation.get("project_columns", 2)) <= 3, "project_columns must be between 1 and 3.")
+    for key in ("stats_provider", "contribution_provider"):
+        require(valid_url(presentation.get(key)), f"Invalid presentation provider URL: {key}")
     records = load_yaml("activity/records.yml").get("activities", [])
     activity_ids = set()
     for a in records:

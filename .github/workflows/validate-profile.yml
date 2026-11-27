@@ -1,0 +1,38 @@
+name: Validate profile changes
+
+on:
+  pull_request:
+    paths:
+      - "profile/**"
+      - "activity/records.yml"
+      - "templates/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/validate-profile.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate source data
+        run: python scripts/validate_data.py
+      - name: Generate both language variants
+        run: python scripts/generate_profile.py
+      - name: Check generated sections
+        run: |
+          grep -q "GitHub Activity" README.en.md
+          grep -q "GitHub 活动" README.md
+          grep -q "Featured Projects" README.en.md
+          grep -q "精选项目" README.md
