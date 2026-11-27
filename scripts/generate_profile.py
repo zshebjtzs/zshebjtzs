@@ -160,14 +160,27 @@ def render_beyond_code(lang):
     config = load_yaml("profile/beyond-code.yml").get("beyond_code", {})
     if not config.get("enabled", False):
         return ""
+    zh = lang == "zh"
+    eyebrow = escape(config.get("eyebrow", "OFF-DUTY DIRECTIVES"))
+    tagline = escape(config.get("tagline_zh" if zh else "tagline_en", ""))
     rows = []
     for item in config.get("items", []):
         title = escape(localized(item, "title", lang))
         summary = escape(localized(item, "summary", lang))
+        tags = item.get("tags", [])
+        tag_line = " · ".join(escape(str(tag)) for tag in tags)
         link = item.get("url")
         title_html = f'<a href="{escape(link)}">{title}</a>' if link else title
-        rows.append(f'<tr><td><strong>{title_html}</strong><br/>{summary}</td></tr>')
-    return '<table><tbody>' + ''.join(rows) + '</tbody></table>' if rows else ""
+        rows.append(
+            '<tr><td style="padding:14px 10px">'
+            f'<p><sub>{eyebrow} / {escape(item.get("id", "").upper().replace("-", " "))}</sub></p>'
+            f'<p><strong>{title_html}</strong></p>'
+            f'<p>{summary}</p>'
+            f'<p><sub>{tag_line}</sub></p>'
+            '</td></tr>'
+        )
+    intro = f'<p><sub>{eyebrow}</sub></p><p><strong>{tagline}</strong></p>'
+    return intro + ('<table><tbody>' + ''.join(rows) + '</tbody></table>' if rows else "")
 
 def render_about(identity, lang):
     summary = escape(localized(identity, "summary", lang))
