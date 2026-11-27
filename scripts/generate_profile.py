@@ -160,8 +160,14 @@ def render_beyond_code(lang):
     config = load_yaml("profile/beyond-code.yml").get("beyond_code", {})
     if not config.get("enabled", False):
         return ""
-    items = config.get("items", [])
-    return render_interests(lang) if items else ""
+    rows = []
+    for item in config.get("items", []):
+        title = escape(localized(item, "title", lang))
+        summary = escape(localized(item, "summary", lang))
+        link = item.get("url")
+        title_html = f'<a href="{escape(link)}">{title}</a>' if link else title
+        rows.append(f'<tr><td><strong>{title_html}</strong><br/>{summary}</td></tr>')
+    return '<table><tbody>' + ''.join(rows) + '</tbody></table>' if rows else ""
 
 def render_about(identity, lang):
     summary = escape(localized(identity, "summary", lang))
