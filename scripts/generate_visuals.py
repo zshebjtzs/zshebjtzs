@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROFILE_DIR = ROOT / "assets" / "profile"
 STATS_DIR = ROOT / "assets" / "stats"
 BADGE_DIR = ROOT / "assets" / "badges"
+THEME_SUFFIX = ""
 PALETTE = {
     "bg": "#0B1724", "panel": "#102235", "panel2": "#142B40",
     "border": "#2B4052", "text": "#DCE5EC", "muted": "#91A4B5",
@@ -34,6 +35,8 @@ BRANDS = {
     "Canvas 2D":"E76F51","d3-delaunay":"F9A03C","Vditor":"3A78F2","Web Worker":"496579",
 }
 def write(path, content):
+    if THEME_SUFFIX and path.suffix.lower() == ".svg":
+        path = path.with_name(f"{path.stem}.{THEME_SUFFIX}{path.suffix}")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content + "\n", encoding="utf-8")
 
@@ -172,7 +175,7 @@ def generate_contributions(stats):
     else:
         today=date.today()
         monday=today.fromordinal(today.toordinal()-today.weekday()-364)
-    colors=["142536","1B4A55","267A7B","42AAA0","79D7D0"]
+    colors=PALETTE.get("heatmap", ["142536","1B4A55","267A7B","42AAA0","79D7D0"])
     svg=svg_start(1100,166,"GitHub contributions during the last 365 days")
     svg+=f'<rect width="1100" height="166" rx="8" fill="{PALETTE["bg"]}"/>'
     svg+=f'<text x="24" y="26" font-family="Verdana,sans-serif" font-size="11" letter-spacing="1.5" fill="{PALETTE["cyan"]}">CONTRIBUTION ACTIVITY · LAST 365 DAYS</text>'
@@ -192,31 +195,51 @@ def generate_contributions(stats):
     write(STATS_DIR / "contributions.svg",svg)
 
 def main():
+    global THEME_SUFFIX
     settings=yaml.safe_load((ROOT/"profile/settings.yml").read_text(encoding="utf-8")) or {}
-    tokens=(yaml.safe_load((ROOT/"profile/modules.yml").read_text(encoding="utf-8")) or {}).get("presentation",{})
-    PALETTE.update({
-        "bg": "#"+tokens.get("page_bg","0B1724"),
-        "panel": "#"+tokens.get("panel_color","102235"),
-        "panel2": "#"+tokens.get("panel_alt_color","142B40"),
-        "border": "#"+tokens.get("border_color","2B4052"),
-        "text": "#"+tokens.get("title_color","DCE5EC"),
-        "muted": "#"+tokens.get("muted_color","91A4B5"),
-        "cyan": "#"+tokens.get("accent","79D7D0"),
-        "orange": "#"+tokens.get("secondary_accent","E8A56D"),
-    })
+    module_config=yaml.safe_load((ROOT/"profile/modules.yml").read_text(encoding="utf-8")) or {}
+    tokens=module_config.get("presentation",{})
+    dark={
+        "bg":"#"+tokens.get("page_bg","0B1724"),
+        "panel":"#"+tokens.get("panel_color","102235"),
+        "panel2":"#"+tokens.get("panel_alt_color","142B40"),
+        "border":"#"+tokens.get("border_color","2B4052"),
+        "text":"#"+tokens.get("title_color","DCE5EC"),
+        "muted":"#"+tokens.get("muted_color","91A4B5"),
+        "cyan":"#"+tokens.get("accent","79D7D0"),
+        "orange":"#"+tokens.get("secondary_accent","E8A56D"),
+        "heatmap":["142536","1B4A55","267A7B","42AAA0","79D7D0"],
+    }
+    light_tokens=tokens.get("light_palette",{})
+    light={
+        "bg":"#"+light_tokens.get("page_bg","F4F7FA"),
+        "panel":"#"+light_tokens.get("panel_color","FFFFFF"),
+        "panel2":"#"+light_tokens.get("panel_alt_color","EAF1F6"),
+        "border":"#"+light_tokens.get("border_color","C7D3DE"),
+        "text":"#"+light_tokens.get("title_color","193047"),
+        "muted":"#"+light_tokens.get("muted_color","5F7488"),
+        "cyan":"#"+light_tokens.get("accent","167F83"),
+        "orange":"#"+light_tokens.get("secondary_accent","B86B35"),
+        "heatmap":light_tokens.get("heatmap",["E6EDF2","B7D8D2","7CBDB2","399B91","167F83"]),
+    }
     stack=settings.get("tech_stack",{})
+    THEME_SUFFIX=""
     generate_badges(stack)
-    generate_hero()
-    generate_about("zh")
-    generate_about("en")
-    generate_focus("zh")
-    generate_focus("en")
     stats_path=ROOT/"data/stats.json"
     stats=json.loads(stats_path.read_text(encoding="utf-8")) if stats_path.exists() else {}
-    generate_stats(stats)
-    generate_languages(stats)
-    generate_contributions(stats)
-    print("Generated local profile visuals and Shields-style technology badges.")
+    for theme,palette in (("dark",dark),("light",light)):
+        PALETTE.update(palette)
+        THEME_SUFFIX=theme
+        generate_hero()
+        generate_about("zh")
+        generate_about("en")
+        generate_focus("zh")
+        generate_focus("en")
+        generate_stats(stats)
+        generate_languages(stats)
+        generate_contributions(stats)
+    THEME_SUFFIX=""
+    print("Generated dark/light self-hosted profile visuals and Shields-style technology badges.")
 
 if __name__=="__main__":
     main()
