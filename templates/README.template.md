@@ -5,7 +5,7 @@
 
 ### {{title}}
 
-**{{domains}}**
+<sub>{{domains}}</sub>
 
 > {{bio}}
 
@@ -21,4 +21,6 @@
 
 ---
 
-<sub>{{footer}}</sub>
+<div align="center">
+  <sub>{{footer}}</sub>
+</div>
