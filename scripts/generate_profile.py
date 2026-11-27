@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate Chinese-default and English profile pages from reviewed source data."""
 from common import ROOT, load_yaml
+from html import escape
+from urllib.parse import quote
 
 def md_link(label, url):
     return f"[{label}]({url})" if url else label
@@ -34,6 +36,56 @@ def render_project(p, lang):
     if highlights:
         line += "\n\n" + "\n".join(f"- {x}" for x in highlights)
     return line
+
+def render_project_cards(items, lang, columns=2):
+    """Render responsive-ish GitHub README project cards from project data."""
+    cards = []
+    for p in items:
+        name = escape(p.get("name", p["id"]))
+        repo = escape(p.get("repository", ""))
+        desc = escape(localized(p, "description", lang))
+        status = p.get("development_status", "Unknown")
+        kind = p.get("project_type", "Project")
+        status_map = {
+            "Maintained": "持续维护中" if lang == "zh" else "Maintained",
+            "In Development": "开发中" if lang == "zh" else "In Development",
+            "Needs Review": "待确认" if lang == "zh" else "Needs Review",
+            "Early Stage": "早期阶段" if lang == "zh" else "Early Stage",
+        }
+        technologies = p.get("technologies", [])[:4]
+        tech = " · ".join(escape(x) for x in technologies)
+        demo = p.get("demo")
+        demo_link = f' · <a href="{escape(demo)}">{"在线体验" if lang == "zh" else "Live Demo"}</a>' if demo else ""
+        stars = f'<img src="https://img.shields.io/github/stars/{escape(p["repository"].split("github.com/")[-1])}?style=flat-square&label=Stars" alt="GitHub stars"/>' if "github.com/" in p.get("repository", "") else ""
+        cards.append(
+            '<td width="50%" valign="top"><h3><a href="' + repo + '">' + name + '</a></h3>'
+            '<p>' + desc + '</p><p><sub>' + escape(status_map.get(status, status)) + ' · ' + escape(kind) + '</sub></p>'
+            '<p><sub>' + tech + '</sub></p><p>' + stars + demo_link + '</p></td>'
+        )
+    rows = []
+    for i in range(0, len(cards), columns):
+        row = cards[i:i + columns]
+        if len(row) < columns:
+            row += ['<td width="50%"></td>'] * (columns - len(row))
+        rows.append("<tr>" + "".join(row) + "</tr>")
+    return '<table>\n' + "\n".join(rows) + '\n</table>' if rows else ("暂无项目。" if lang == "zh" else "No projects yet.")
+
+def render_github_activity(lang):
+    """Third-party SVG cards are optional visual enhancements, not data dependencies."""
+    username = "zshebjtzs"
+    theme = "transparent"
+    stats = f"https://github-readme-stats.vercel.app/api?username={username}&show_icons=true&hide_border=true&theme=transparent&include_all_commits=true"
+    langs = f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact&hide_border=true&theme=transparent&langs_count=8"
+    chart = f"https://ghchart.rshah.org/6B9FE8/{username}"
+    alt_stats = "GitHub statistics" if lang == "en" else "GitHub 统计数据"
+    alt_langs = "Most used languages" if lang == "en" else "主要编程语言"
+    alt_chart = "GitHub contribution graph" if lang == "en" else "GitHub 贡献热力图"
+    return (
+        '<table><tr><td width="50%" valign="top"><img src="' + stats + '" alt="' + alt_stats + '" width="100%"/></td>'
+        '<td width="50%" valign="top"><img src="' + langs + '" alt="' + alt_langs + '" width="100%"/></td></tr></table>\n'
+        '<p align="center"><img src="' + chart + '" alt="' + alt_chart + '" width="100%"/></p>'
+        '<sub>' + ("Statistics are provided by external services and may be temporarily unavailable." if lang == "en" else "统计图由第三方服务提供，可能存在短暂不可用或数据延迟；不影响主页其他内容。") + '</sub>'
+    )
 
 def build_page(lang, identity, focus, projects, records, milestones, stack, template):
     zh = lang == "zh"
@@ -98,6 +150,28 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     )
     archive_link = "[activity/ACTIVITY.md](./activity/ACTIVITY.md)" if zh else "[activity/ACTIVITY.en.md](./activity/ACTIVITY.en.md)"
     archive_sentence = "完整的已审核活动记录见" if zh else "Browse the complete reviewed activity archive:"
+    module_titles = {
+        "about": labels["about_heading"], "focus": labels["focus_heading"],
+        "github_activity": "GitHub 活动" if zh else "GitHub Activity",
+        "featured_projects": labels["featured_heading"], "other_projects": labels["other_heading"],
+        "contributions": labels["contributions_heading"], "highlights": labels["highlights_heading"],
+        "milestones": labels["milestones_heading"], "tech_stack": labels["stack_heading"],
+        "activity_archive": labels["archive_heading"],
+    }
+    module_bodies = {
+        "about": f"{identity.get('summary_zh' if zh else 'summary_en') or identity.get('summary', '')}\\n\\n{method_md}",
+        "focus": focus_md, "github_activity": render_github_activity(lang),
+        "featured_projects": featured_md, "other_projects": others_md,
+        "contributions": contributions_md, "highlights": highlights_md,
+        "milestones": milestone_md, "tech_stack": stack_md,
+        "activity_archive": f"{archive_sentence} {archive_link}。" if zh else f"{archive_sentence} {archive_link}.",
+    }
+    module_config = load_yaml("profile/modules.yml").get("modules", [])
+    enabled_modules = [m for m in module_config if m.get("enabled", True)]
+    modules_md = "\\n\\n".join(
+        f"## {module_titles[m['id']]}\\n\\n{module_bodies[m['id']]}"
+        for m in enabled_modules if m.get("id") in module_titles
+    )
     replacements = {
         "{{display_name}}": identity.get("display_name", identity["username"]),
         "{{title}}": identity.get("title_zh" if zh else "title_en") or identity.get("title", ""),
@@ -105,7 +179,7 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "{{bio}}": identity.get("bio", "") if zh else identity.get("bio_en", identity.get("bio", "")),
         "{{social_links}}": social,
         "{{language_switch}}": "**简体中文** · [English](./README.en.md)" if zh else "[简体中文](./README.md) · **English**",
-        "{{about_heading}}": labels["about_heading"],
+        "{{modules}}": modules_md,\n        "{{about_heading}}": labels["about_heading"],
         "{{focus_heading}}": labels["focus_heading"],
         "{{featured_heading}}": labels["featured_heading"],
         "{{other_heading}}": labels["other_heading"],
