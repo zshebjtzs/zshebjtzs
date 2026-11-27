@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from common import load_yaml
 
 ALLOWED_VISIBILITY = {"featured", "other", "draft"}
-ALLOWED_MODULES = {"about", "focus", "github_activity", "featured_projects", "other_projects", "contributions", "highlights", "milestones", "tech_stack", "activity_archive"}
+ALLOWED_MODULES = {"about", "focus", "principles", "technical_interests", "deep_dives", "development_timeline", "proficiency", "beyond_code", "github_activity", "featured_projects", "other_projects", "contributions", "highlights", "milestones", "tech_stack", "activity_archive"}
 
 def require(condition, message):
     if not condition:
@@ -46,6 +46,19 @@ def main():
     require(1 <= int(presentation.get("project_columns", 2)) <= 3, "project_columns must be between 1 and 3.")
     for key in ("accent", "secondary_accent", "title_color", "text_color", "muted_color", "page_bg", "panel_color", "panel_alt_color", "border_color"):
         require(valid_hex_color(presentation.get(key)), f"Invalid presentation color token: {key}")
+    light_palette = presentation.get("light_palette", {})
+    require(isinstance(light_palette, dict), "light_palette must be a mapping.")
+    for key in ("page_bg", "panel_color", "panel_alt_color", "border_color", "title_color", "muted_color", "accent", "secondary_accent"):
+        require(valid_hex_color(light_palette.get(key)), f"Invalid light theme color token: {key}")
+    for filename, key in (("principles.yml", "principles"), ("technical-interests.yml", "interests"), ("deep-dives.yml", "deep_dives"), ("proficiency.yml", "proficiency")):
+        entries = load_yaml(f"profile/{filename}").get(key, [])
+        seen = set()
+        for entry in entries:
+            require(entry.get("id") not in seen, f"Duplicate {key} id: {entry.get('id')}")
+            seen.add(entry.get("id"))
+    beyond = load_yaml("profile/beyond-code.yml").get("beyond_code", {})
+    require(isinstance(beyond.get("enabled", False), bool), "beyond_code.enabled must be boolean.")
+    require(isinstance(beyond.get("items", []), list), "beyond_code.items must be a list.")
     stack = load_yaml("profile/settings.yml").get("tech_stack", {})
     require(isinstance(stack, dict) and bool(stack), "Technology stack must define at least one category.")
     for category, technologies in stack.items():
