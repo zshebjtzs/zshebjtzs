@@ -10,6 +10,8 @@ on:
       - "scripts/**"
       - "requirements.txt"
       - ".github/workflows/publish-profile.yml"
+  schedule:
+    - cron: "17 4 * * 2"
   workflow_dispatch:
 
 permissions:
@@ -32,12 +34,19 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Collect public GitHub statistics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: zshebjtzs
+        run: python scripts/collect_stats.py
       - name: Validate reviewed data
         run: python scripts/validate_data.py
-      - name: Generate public profile
+      - name: Generate visual components
+        run: python scripts/generate_visuals.py
+      - name: Generate bilingual profile
         run: python scripts/generate_profile.py
       - name: Commit generated files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: regenerate bilingual profile"
-          file_pattern: README.md README.en.md activity/ACTIVITY.md activity/ACTIVITY.en.md assets/badges/*.svg
+          commit_message: "chore: refresh bilingual profile visuals and stats"
+          file_pattern: README.md README.en.md activity/ACTIVITY.md activity/ACTIVITY.en.md assets/badges/*.svg assets/profile/*.svg assets/stats/*.svg data/stats.json data/tech-badges.json
