@@ -13,6 +13,16 @@ presentation:
   panel_color: "102235"
   panel_alt_color: "142B40"
   border_color: "2B4052"
+  light_palette:
+    page_bg: "F4F7FA"
+    panel_color: "FFFFFF"
+    panel_alt_color: "EAF1F6"
+    border_color: "C7D3DE"
+    title_color: "193047"
+    muted_color: "5F7488"
+    accent: "167F83"
+    secondary_accent: "B86B35"
+    heatmap: ["E6EDF2", "B7D8D2", "7CBDB2", "399B91", "167F83"]
   project_columns: 3
   visual_assets:
     hero: assets/profile/hero.svg
@@ -26,19 +36,31 @@ modules:
     enabled: true
   - id: focus
     enabled: true
-  - id: github_activity
+  - id: principles
+    enabled: true
+  - id: technical_interests
     enabled: true
   - id: featured_projects
     enabled: true
   - id: other_projects
+    enabled: true
+  - id: deep_dives
+    enabled: true
+  - id: development_timeline
+    enabled: true
+  - id: github_activity
     enabled: true
   - id: contributions
     enabled: true
   - id: highlights
     enabled: true
   - id: milestones
-    enabled: true
+    enabled: false
   - id: tech_stack
     enabled: true
+  - id: proficiency
+    enabled: true
+  - id: beyond_code
+    enabled: false
   - id: activity_archive
     enabled: true

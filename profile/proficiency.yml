@@ -1,0 +1,23 @@
+# Evidence-oriented categories. These are not numerical skill ratings.
+proficiency:
+  - id: applied
+    title: Applied in Projects
+    title_zh: 项目实践
+    description: Technologies used in shipped or actively maintained projects.
+    description_zh: 已在实际发布或持续维护的项目中使用。
+    items: [JavaScript, TypeScript, Vue 3, Node.js, HTML5, CSS3, Canvas 2D, Vite, Git, GitHub Actions]
+    items_zh: [JavaScript, TypeScript, Vue 3, Node.js, HTML5, CSS3, Canvas 2D, Vite, Git, GitHub Actions]
+  - id: foundations
+    title: Core Foundations
+    title_zh: 核心基础
+    description: Areas with established study and implementation experience.
+    description_zh: 具有持续学习与实际实现经验的领域。
+    items: [C++, Data Structures, Graph Theory, Algorithms]
+    items_zh: [C++, 数据结构, 图论, 算法]
+  - id: exploring
+    title: Exploring
+    title_zh: 持续探索
+    description: Topics being actively explored through projects and experiments.
+    description_zh: 正通过项目与实验持续探索的方向。
+    items: [AI-assisted Engineering, Agent Workflows, Software Architecture]
+    items_zh: [AI 辅助工程化, Agent 工作流, 软件架构]

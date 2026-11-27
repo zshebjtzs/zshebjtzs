@@ -1,7 +1,7 @@
 <!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
-<img src="./assets/profile/hero.svg" alt="Software engineering · Build, iterate, share" width="100%"/>
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/profile/hero.light.svg"/><img src="./assets/profile/hero.dark.svg" alt="Software engineering · Build, iterate, share" width="100%"/></picture>
 
 <sub>{{domains}}</sub>
 

@@ -54,3 +54,19 @@ Technology groups describe domains, not skill levels. Add or remove technologies
 - Put reusable colors and layout settings in presentation tokens.
 - Keep generated SVGs deterministic and self-hosted.
 - Preserve bilingual parity and validate both pages after changes.
+
+
+## Personalization modules
+
+- `principles.yml` contains engineering principles stated as working methods, not personality claims.
+- `technical-interests.yml` separates technical interests from the technology stack.
+- `deep-dives.yml` links implementation topics to verifiable project evidence.
+- `milestones.yml` is the single source for the development timeline; the duplicate standalone milestones list is disabled.
+- `proficiency.yml` uses evidence-oriented experience categories rather than numerical skill ratings.
+- `beyond-code.yml` is a reserved, disabled extension point. It remains unpublished until the user defines its content.
+
+## Theme variants
+
+The README uses `<picture>` with `prefers-color-scheme` to select repository-hosted dark or light SVG assets. GitHub controls the surrounding page background; README content cannot override the site's global background. Visual panels therefore avoid hard-coded dark HTML backgrounds and adapt to the host theme, while SVG components have separate palettes.
+
+Add new theme tokens under `presentation.light_palette` and keep both variants generated from the same component functions.
