@@ -1,7 +1,7 @@
 <!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
-<sub>SOFTWARE ENGINEERING · OPEN SOURCE · DEVELOPER TOOLS</sub>
+<sub>{{domains}}</sub>
 
 # {{display_name}}
 
