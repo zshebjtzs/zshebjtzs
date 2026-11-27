@@ -4,7 +4,7 @@
 
 **Tech-Dawn & Open-Source Minimalist**
 
-- Deep-sea blue and cool silver are the structural palette.
+- Deep-sea blue and cool silver are the structural palette. The SVG renderer reads the semantic colors directly from `profile/modules.yml`; it does not maintain a second independent palette.
 - Soft cyan is the primary accent; sunrise orange is secondary.
 - Visual hierarchy comes from spacing, typography, diagrams, and selective panels rather than enclosing every paragraph in a card.
 - Keep all public profile information readable as text. SVGs are supporting visual components, not the only carrier of essential meaning.
