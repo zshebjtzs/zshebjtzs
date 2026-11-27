@@ -1,2 +1,23 @@
-# Keep this list empty until a milestone has a verified date and evidence.
-milestones: []
+# Milestones must have a verified date and direct evidence.
+milestones:
+  - id: treegrow-windows-release
+    date: "2026-11-11"
+    title: TreeGrow Windows Offline Release
+    title_zh: TreeGrow Windows 离线桌面版发布
+    description: Delivered a portable Windows desktop build with WebView2, packaging, and CI smoke tests.
+    description_zh: 完成基于 WebView2 的便携式 Windows 桌面构建、打包与 CI 冒烟测试。
+    evidence: https://github.com/zshebjtzs/tree-grow-game/pull/4
+  - id: treegrow-ai-architecture
+    date: "2026-11-22"
+    title: TreeGrow AI Architecture Refactor
+    title_zh: TreeGrow AI 决策架构重构
+    description: Introduced a shared search architecture, adapter boundary, and six difficulty levels.
+    description_zh: 建立统一搜索架构与适配器边界，并完成六档 AI 难度升级。
+    evidence: https://github.com/zshebjtzs/tree-grow-game/pull/33
+  - id: treegrow-strategic-evaluation
+    date: "2026-11-24"
+    title: Strategic Position Evaluation
+    title_zh: 战略局面评估升级
+    description: Added multi-signal strategic analysis for expansion, defense, spatial control, and coordination.
+    description_zh: 增加针对扩张、防守、空间控制与多根协同的多信号战略分析。
+    evidence: https://github.com/zshebjtzs/tree-grow-game/pull/36
