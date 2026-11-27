@@ -185,7 +185,7 @@ def generate_contributions(stats):
         level=0 if count==0 else 1 if count<=2 else 2 if count<=5 else 3 if count<=9 else 4
         x=x0+week*(cell+gap); y=y0+dow*(cell+gap)
         svg+=f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="#{colors[level]}"><title>{d.isoformat()}: {count}</title></rect>'
-    total=stats.get("metrics",{}).get("yearly_contributions",0)
+    total=stats.get("metrics",{}).get("yearly_contributions") or 0
     svg+=f'<text x="930" y="78" font-family="Verdana,sans-serif" font-size="26" font-weight="700" fill="{PALETTE["text"]}">{int(total):,}</text>'
     svg+=f'<text x="930" y="99" font-family="Verdana,sans-serif" font-size="10" fill="{PALETTE["muted"]}">CONTRIBUTIONS</text>'
     svg+='</svg>'
