@@ -1,0 +1,22 @@
+# Engineering principles: describe working methods, not personality claims.
+principles:
+  - id: problem-first
+    title: Problem-first Engineering
+    title_zh: 问题驱动
+    description: Start from the actual problem and constraints before selecting tools or implementation details.
+    description_zh: 先明确真实问题与约束，再决定工具、架构和实现方式。
+  - id: modularity
+    title: Modular by Design
+    title_zh: 模块化与职责分离
+    description: Keep state, rules, rendering, automation, and presentation responsibilities explicit.
+    description_zh: 明确划分状态、规则、渲染、自动化与展示职责，降低模块间耦合。
+  - id: verifiable-delivery
+    title: Verifiable Delivery
+    title_zh: 可验证的交付
+    description: Prefer reproducible tests, explicit validation, and evidence-backed release states.
+    description_zh: 重视可复现测试、显式校验，以及有证据支撑的发布状态。
+  - id: ai-as-engineering-tool
+    title: AI as an Engineering Tool
+    title_zh: 将 AI 纳入工程流程
+    description: Use AI across analysis, design, implementation, debugging, and testing while retaining engineering judgment.
+    description_zh: 将 AI 用于分析、设计、实现、调试与测试，同时保留独立的工程判断。
