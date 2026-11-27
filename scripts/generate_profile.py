@@ -4,9 +4,6 @@ from common import ROOT, load_yaml
 from html import escape
 from urllib.parse import quote
 import hashlib
-import re
-from pathlib import Path
-
 ASSET_DIR = ROOT / "assets" / "badges"
 
 def md_link(label, url):
@@ -63,7 +60,7 @@ def badge(label, color, presentation):
         f'fill="#{fg}">{safe_label}</text></svg>'
     )
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
-    (ASSET_DIR / filename).write_text(svg + "\\n", encoding="utf-8")
+    (ASSET_DIR / filename).write_text(svg + "\n", encoding="utf-8")
     return f'<img src="./assets/badges/{filename}" alt="{escape(label_text)}" height="{height}"/>'
 
 def render_project_cards(items, lang, columns=2, presentation=None):
