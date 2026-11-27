@@ -1,13 +1,13 @@
 <!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
+<sub>SOFTWARE ENGINEERING · OPEN SOURCE · DEVELOPER TOOLS</sub>
+
 # {{display_name}}
 
-### {{title}}
+**{{title}}**
 
-<sub>{{domains}}</sub>
-
-> {{bio}}
+{{bio}}
 
 {{social_links}}
 
