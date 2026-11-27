@@ -1,5 +1,12 @@
-# Presentation modules are data-driven: reorder, disable, or extend modules without
-# changing the page template. Module IDs map to renderers in generate_profile.py.
+# Module order and visibility are configuration, not template structure.
+# Add a renderer in scripts/generate_profile.py before registering a new module here.
+presentation:
+  username: zshebjtzs
+  theme: transparent
+  accent: "6B9FE8"
+  project_columns: 2
+  stats_provider: https://github-readme-stats.vercel.app
+  contribution_provider: https://ghchart.rshah.org
 modules:
   - id: about
     enabled: true
