@@ -62,8 +62,8 @@ def render_project_cards(items, lang, columns=2, presentation=None):
         demo_label = "在线体验 ↗" if lang == "zh" else "Live Demo ↗"
         demo_html = f'<a href="{escape(demo)}">{demo_label}</a>' if demo else ""
         cards.append(
-            f'<td width="{100 // columns}%" valign="top" style="border:1px solid #{border};padding:16px;background:#{panel}">'
-            f'<p><sub><font color="#{accent}">PROJECT {index:02d}</font> · {escape(status)}</sub></p>'
+            f'<td width="{100 // columns}%" valign="top" style="padding:16px">'
+            f'<p><sub>PROJECT {index:02d} · {escape(status)}</sub></p>'
             f'<p><strong><a href="{repo}">{name} ↗</a></strong></p>'
             f'<p>{desc}</p>'
             f'<p><sub>{escape(kind)}</sub></p>'
@@ -180,7 +180,7 @@ def render_about(identity, lang):
     return (
         f'<p><strong>{summary}</strong></p>'
         f'<p><sub>{heading}</sub></p>'
-        f'<p><strong><font color="#79D7D0">{title}</font></strong></p>'
+        f'<p><strong>{title}</strong></p>'
         f'<p>{desc}</p>'
         + image(diagram, alt)
     )
