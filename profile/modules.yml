@@ -61,6 +61,6 @@ modules:
   - id: proficiency
     enabled: true
   - id: beyond_code
-    enabled: false
+    enabled: true
   - id: activity_archive
     enabled: true
