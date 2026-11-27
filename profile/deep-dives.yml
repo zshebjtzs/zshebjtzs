@@ -1,0 +1,32 @@
+# Deep dives link to concrete repositories and verified implementation areas.
+deep_dives:
+  - id: treegrow-ai
+    project: TreeGrow
+    project_url: https://github.com/zshebjtzs/tree-grow-game
+    title: AI Decision & Search Architecture
+    title_zh: AI 决策与搜索架构
+    summary: A shared search engine with a TreeGrow adapter, iterative deepening, Alpha-Beta/PVS, transposition tables, and bounded difficulty budgets.
+    summary_zh: 通过 TreeGrow 适配器接入统一搜索引擎，结合迭代加深、Alpha-Beta/PVS、置换表与受控搜索预算。
+    evidence: https://github.com/zshebjtzs/tree-grow-game/pull/33
+    tags: [Search, Alpha-Beta, PVS, Transposition Table]
+    tags_zh: [搜索, Alpha-Beta, PVS, 置换表]
+  - id: treegrow-strategy
+    project: TreeGrow
+    project_url: https://github.com/zshebjtzs/tree-grow-game
+    title: Strategic Position Evaluation
+    title_zh: 战略局面评估
+    summary: Multi-signal position analysis for expansion, defense, root safety, frontier control, and multi-root coordination.
+    summary_zh: 对扩张、防守、根安全、前线控制与多根协同进行多信号局面分析。
+    evidence: https://github.com/zshebjtzs/tree-grow-game/pull/36
+    tags: [Position Evaluation, Spatial Analysis, Decision Support]
+    tags_zh: [局面评估, 空间分析, 决策支持]
+  - id: agent-skills-catalog
+    project: My Agent Skills
+    project_url: https://github.com/zshebjtzs/my-agent-skills
+    title: Versioned Agent Skills Catalog
+    title_zh: 版本化 Agent Skills 目录
+    summary: A declarative catalog with source attribution, bilingual discovery, previews, downloads, and automated validation.
+    summary_zh: 通过声明式目录管理来源归属，提供双语检索、预览、下载与自动化校验。
+    evidence: https://github.com/zshebjtzs/my-agent-skills
+    tags: [Catalog Design, Attribution, Automation]
+    tags_zh: [目录设计, 来源追踪, 自动化]
