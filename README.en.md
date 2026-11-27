@@ -1,6 +1,8 @@
 <!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
+<img src="./assets/profile/hero.svg" alt="Software engineering · Build, iterate, share" width="100%"/>
+
 <sub>Software Engineering · Open Source · Developer Tools</sub>
 
 # ZSHEBJTZS
@@ -9,9 +11,9 @@
 
 All great ideas and actions begin with a small, seemingly insignificant step.
 
-<a href="https://github.com/zshebjtzs"><img src="./assets/badges/badge-3ffc00c56426.svg" alt="GitHub" height="22"/></a> &nbsp; <a href="https://www.luogu.com.cn/user/933414"><img src="./assets/badges/badge-32d71298f50f.svg" alt="Luogu" height="22"/></a> &nbsp; <a href="https://space.bilibili.com/700876219"><img src="./assets/badges/badge-03d712b661c4.svg" alt="Bilibili" height="22"/></a> &nbsp; <a href="https://x.com/zshebjtzs"><img src="./assets/badges/badge-37e34b56833b.svg" alt="X" height="22"/></a>
+<a href="https://github.com/zshebjtzs">GitHub</a> &nbsp;·&nbsp; <a href="https://www.luogu.com.cn/user/933414">Luogu</a> &nbsp;·&nbsp; <a href="https://space.bilibili.com/700876219">Bilibili</a> &nbsp;·&nbsp; <a href="https://x.com/zshebjtzs">X</a>
 
-<a href="./README.md"><img src="./assets/badges/badge-45079035f60f.svg" alt="简体中文" height="22"/></a> &nbsp; <a href="./README.en.md"><img src="./assets/badges/badge-1843198e362d.svg" alt="English" height="22"/></a>
+<a href="./README.md">简体中文</a> &nbsp;·&nbsp; <a href="./README.en.md">English</a>
 
 </div>
 
@@ -19,33 +21,31 @@ All great ideas and actions begin with a small, seemingly insignificant step.
 
 ## About
 
-<p><strong>Exploring software engineering and building practical software through open-source development.</strong></p><p><sub>ENGINEERING APPROACH</sub></p><p><strong><font color="#79D7D0">AI-assisted Development</font></strong></p><p>AI tools are used as part of an engineering workflow covering requirements analysis, architecture design, implementation, debugging, testing, and delivery.</p>
+<p><strong>Exploring software engineering and building practical software through open-source development.</strong></p><p><sub>ENGINEERING APPROACH</sub></p><p><strong><font color="#79D7D0">AI-assisted Development</font></strong></p><p>AI tools are used as part of an engineering workflow covering requirements analysis, architecture design, implementation, debugging, testing, and delivery.</p><p align="center"><img src="./assets/profile/about.en.svg" alt="Software engineering workflow: requirements, architecture, implementation, testing and delivery" width="100%"/></p>
 
 <hr/>
 
 ## Current Focus
 
-<p><sub><b>PRIMARY</b></sub><br/><strong>Software Engineering · Open-Source Development</strong></p>
-<p><sub><b>SECONDARY</b></sub><br/><strong>Developer Tools · AI-assisted Development · Web and Desktop Applications</strong></p>
-<p><sub><b>LONG-TERM</b></sub><br/><strong>Algorithms · Computer Science</strong></p>
+<p align="center"><img src="./assets/profile/focus.en.svg" alt="Three focus areas: primary direction, current practice and long-term interests" width="100%"/></p>
 
 <hr/>
 
 ## GitHub Activity
 
-<table><tbody><tr><td width="50%" valign="top"><img src="https://github-readme-stats.vercel.app/api?username=zshebjtzs&show_icons=true&include_all_commits=true&rank_icon=github&bg_color=102235&title_color=DCE5EC&text_color=D7E0E8&icon_color=79D7D0&border_color=2B4052&hide_border=false" alt="GitHub statistics" width="100%"/></td><td width="50%" valign="top"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zshebjtzs&layout=compact&langs_count=8&bg_color=102235&title_color=DCE5EC&text_color=D7E0E8&icon_color=79D7D0&border_color=2B4052&hide_border=false" alt="Most used languages" width="100%"/></td></tr></tbody></table><p align="center"><img src="https://ghchart.rshah.org/79D7D0/zshebjtzs" alt="GitHub contribution graph" width="100%"/></p><p align="center"><sub>Live cards are served by external providers; the rest of this profile is generated locally.</sub></p>
+<p align="center"><img src="./assets/stats/overview.svg" alt="GitHub public activity: commits, repositories, stars and pull requests" width="100%"/></p><p align="center"><img src="./assets/stats/languages.svg" alt="Most used languages by source-code bytes" width="100%"/></p><p align="center"><img src="./assets/stats/contributions.svg" alt="GitHub contribution activity during the last 365 days" width="100%"/></p><p align="center"><sub>Public data is cached from GitHub REST / GraphQL APIs. Commit count uses GitHub public commit search.</sub></p>
 
 <hr/>
 
 ## Featured Projects
 
-<table><tbody><tr><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><strong><a href="https://github.com/zshebjtzs/tree-grow-game">TreeGrow — Growth Tree: Graph Theory ↗</a></strong></p><p>A browser-based strategy game built around graph topology and tree growth, featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load, and asynchronous AI decision-making.</p><p><sub><font color="#79D7D0">Maintained</font> · Personal</sub></p><p><img src="./assets/badges/tech-6839a1eadf38.svg" alt="JavaScript" height="26"/> <img src="./assets/badges/tech-d97fb2d9e4f1.svg" alt="HTML5" height="26"/> <img src="./assets/badges/tech-be046c9d7f60.svg" alt="CSS3" height="26"/> <img src="./assets/badges/tech-cc31a154668b.svg" alt="Canvas 2D" height="26"/> <img src="./assets/badges/tech-ae907abcbf4b.svg" alt="d3-delaunay" height="26"/></p><p><a href="https://zshebjtzs.github.io/tree-grow-game/">Live Demo ↗</a></p></td><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><strong><a href="https://github.com/zshebjtzs/my-agent-skills">My Agent Skills ↗</a></strong></p><p>A version-controlled library of reusable agent Skills, paired with a searchable bilingual portal for personal, community, shared, and external Skills.</p><p><sub><font color="#79D7D0">Maintained</font> · Personal</sub></p><p><img src="./assets/badges/tech-6839a1eadf38.svg" alt="JavaScript" height="26"/> <img src="./assets/badges/tech-96e8b268d291.svg" alt="Node.js" height="26"/> <img src="./assets/badges/tech-fb336bd8cb27.svg" alt="VitePress" height="26"/> <img src="./assets/badges/tech-bb066d70499f.svg" alt="GitHub Actions" height="26"/> <img src="./assets/badges/tech-667b086beea6.svg" alt="GitHub Pages" height="26"/></p><p><a href="https://zshebjtzs.github.io/my-agent-skills/">Live Demo ↗</a></p></td><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><strong><a href="https://github.com/zshebjtzs/BiliFlow">BiliFlow ↗</a></strong></p><p>A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are in place; download and media-processing features are not yet integrated.</p><p><sub><font color="#79D7D0">In Development</font> · Personal</sub></p><p><img src="./assets/badges/tech-0b8a0843d59f.svg" alt="Vue 3" height="26"/> <img src="./assets/badges/tech-8f8d632558d8.svg" alt="TypeScript" height="26"/> <img src="./assets/badges/tech-a8baeb91a16c.svg" alt="Vite" height="26"/> <img src="./assets/badges/tech-8f9064b18865.svg" alt="Naive UI" height="26"/> <img src="./assets/badges/tech-cd7a19e26962.svg" alt="Neutralinojs" height="26"/></p><p></p></td></tr></tbody></table>
+<table><tbody><tr><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 01</font> · Maintained</sub></p><p><strong><a href="https://github.com/zshebjtzs/tree-grow-game">TreeGrow — Growth Tree: Graph Theory ↗</a></strong></p><p>A browser-based strategy game built around graph topology and tree growth, featuring procedural Voronoi maps, PVP/PVE, interactive tutorials, save/load, and asynchronous AI decision-making.</p><p><sub>Personal Project</sub></p><p><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-65fbc96898c9.svg" alt="HTML5" height="28"/> <img src="./assets/badges/tech-6439894ddf3c.svg" alt="CSS3" height="28"/> <img src="./assets/badges/tech-c3bf8822c5be.svg" alt="Canvas 2D" height="28"/> <img src="./assets/badges/tech-86e96b3c64fb.svg" alt="d3-delaunay" height="28"/> <img src="./assets/badges/tech-6aa812d432b1.svg" alt="Web Worker" height="28"/></p><p><a href="https://zshebjtzs.github.io/tree-grow-game/">Live Demo ↗</a></p></td><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 02</font> · Maintained</sub></p><p><strong><a href="https://github.com/zshebjtzs/my-agent-skills">My Agent Skills ↗</a></strong></p><p>A version-controlled library of reusable agent Skills, paired with a searchable bilingual portal for personal, community, shared, and external Skills.</p><p><sub>Personal Project</sub></p><p><img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-9f74ecdefa06.svg" alt="VitePress" height="28"/> <img src="./assets/badges/tech-05c3b2746e0a.svg" alt="GitHub Actions" height="28"/> <img src="./assets/badges/tech-e6c2ada0ee18.svg" alt="GitHub Pages" height="28"/></p><p><a href="https://zshebjtzs.github.io/my-agent-skills/">Live Demo ↗</a></p></td><td width="33%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 03</font> · In Development</sub></p><p><strong><a href="https://github.com/zshebjtzs/BiliFlow">BiliFlow ↗</a></strong></p><p>A lightweight Windows desktop GUI for yt-dlp, built with Vue 3, TypeScript, Vite, Naive UI, and Neutralinojs. The desktop shell and base interface are in place; download and media-processing features are not yet integrated.</p><p><sub>Personal Project</sub></p><p><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-5af9230176ea.svg" alt="TypeScript" height="28"/> <img src="./assets/badges/tech-09dac051647e.svg" alt="Vite" height="28"/> <img src="./assets/badges/tech-1080f78958ad.svg" alt="Naive UI" height="28"/> <img src="./assets/badges/tech-d90fc3d91ab7.svg" alt="Neutralinojs" height="28"/></p><p></p></td></tr></tbody></table>
 
 <hr/>
 
 ## Other Projects
 
-<table><tbody><tr><td width="100%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><strong><a href="https://github.com/zshebjtzs/qdezJDS">qdezJDS ↗</a></strong></p><p>A full-stack community platform with a Vue 3 frontend and a Node.js, Express, and MySQL backend, including forums, file storage, administration, authentication, permissions, and notifications.</p><p><sub><font color="#79D7D0">Needs Review</font> · Collaboration</sub></p><p><img src="./assets/badges/tech-0b8a0843d59f.svg" alt="Vue 3" height="26"/> <img src="./assets/badges/tech-96e8b268d291.svg" alt="Node.js" height="26"/> <img src="./assets/badges/tech-f6faef8cc423.svg" alt="Express" height="26"/> <img src="./assets/badges/tech-9d3cb97a34fa.svg" alt="MySQL" height="26"/> <img src="./assets/badges/tech-931ceedbdd19.svg" alt="JWT" height="26"/></p><p></p></td></tr></tbody></table>
+<table><tbody><tr><td width="100%" valign="top" style="border:1px solid #2B4052;padding:16px;background:#102235"><p><sub><font color="#79D7D0">PROJECT 01</font> · Needs Review</sub></p><p><strong><a href="https://github.com/zshebjtzs/qdezJDS">qdezJDS ↗</a></strong></p><p>A full-stack community platform with a Vue 3 frontend and a Node.js, Express, and MySQL backend, including forums, file storage, administration, authentication, permissions, and notifications.</p><p><sub>Collaboration</sub></p><p><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-a197ede4918d.svg" alt="Express" height="28"/> <img src="./assets/badges/tech-0365abe41f9c.svg" alt="MySQL" height="28"/> <img src="./assets/badges/tech-e7975dd058c1.svg" alt="JWT" height="28"/> <img src="./assets/badges/tech-f7edf190153b.svg" alt="Vditor" height="28"/></p><p></p></td></tr></tbody></table>
 
 <hr/>
 
@@ -63,14 +63,16 @@ All great ideas and actions begin with a small, seemingly insignificant step.
 
 ## Milestones
 
-Milestones are archived only after their date, evidence, and long-term significance are verified.
+Milestones are archived only after their date, evidence, and significance are verified.
 
 <hr/>
 
-## Tech Stack
+## Technology Stack
 
-<p><sub><b>Experienced</b></sub><br/><img src="./assets/badges/tech-6839a1eadf38.svg" alt="JavaScript" height="26"/> <img src="./assets/badges/tech-c66afb0f01b5.svg" alt="C++" height="26"/> <img src="./assets/badges/tech-4956afe60b44.svg" alt="Git" height="26"/> <img src="./assets/badges/tech-9cc5aad38e63.svg" alt="GitHub" height="26"/></p>
-<p><sub><b>Familiar</b></sub><br/><img src="./assets/badges/tech-8f8d632558d8.svg" alt="TypeScript" height="26"/> <img src="./assets/badges/tech-0b8a0843d59f.svg" alt="Vue 3" height="26"/> <img src="./assets/badges/tech-96e8b268d291.svg" alt="Node.js" height="26"/> <img src="./assets/badges/tech-9d3cb97a34fa.svg" alt="MySQL" height="26"/> <img src="./assets/badges/tech-7a3028664f7d.svg" alt="HTML" height="26"/> <img src="./assets/badges/tech-77f12d637c91.svg" alt="CSS" height="26"/> <img src="./assets/badges/tech-a8baeb91a16c.svg" alt="Vite" height="26"/></p>
+<p><sub><b>LANGUAGES</b></sub><br/><img src="./assets/badges/tech-4ff8e42fb0a0.svg" alt="C++" height="28"/> <img src="./assets/badges/tech-b7889f3fc477.svg" alt="JavaScript" height="28"/> <img src="./assets/badges/tech-5af9230176ea.svg" alt="TypeScript" height="28"/> <img src="./assets/badges/tech-65fbc96898c9.svg" alt="HTML5" height="28"/> <img src="./assets/badges/tech-6439894ddf3c.svg" alt="CSS3" height="28"/></p>
+<p><sub><b>FRAMEWORKS &amp; RUNTIME</b></sub><br/><img src="./assets/badges/tech-657c1167a5dc.svg" alt="Vue 3" height="28"/> <img src="./assets/badges/tech-ee520df41b54.svg" alt="Node.js" height="28"/> <img src="./assets/badges/tech-a197ede4918d.svg" alt="Express" height="28"/> <img src="./assets/badges/tech-09dac051647e.svg" alt="Vite" height="28"/> <img src="./assets/badges/tech-1080f78958ad.svg" alt="Naive UI" height="28"/> <img src="./assets/badges/tech-d90fc3d91ab7.svg" alt="Neutralinojs" height="28"/> <img src="./assets/badges/tech-9f74ecdefa06.svg" alt="VitePress" height="28"/></p>
+<p><sub><b>TOOLS &amp; INFRASTRUCTURE</b></sub><br/><img src="./assets/badges/tech-5e2412e78c0e.svg" alt="Git" height="28"/> <img src="./assets/badges/tech-39228727dc9c.svg" alt="GitHub" height="28"/> <img src="./assets/badges/tech-05c3b2746e0a.svg" alt="GitHub Actions" height="28"/> <img src="./assets/badges/tech-e6c2ada0ee18.svg" alt="GitHub Pages" height="28"/></p>
+<p><sub><b>GRAPHICS &amp; DATA</b></sub><br/><img src="./assets/badges/tech-c3bf8822c5be.svg" alt="Canvas 2D" height="28"/> <img src="./assets/badges/tech-86e96b3c64fb.svg" alt="d3-delaunay" height="28"/> <img src="./assets/badges/tech-0365abe41f9c.svg" alt="MySQL" height="28"/> <img src="./assets/badges/tech-e7975dd058c1.svg" alt="JWT" height="28"/> <img src="./assets/badges/tech-f7edf190153b.svg" alt="Vditor" height="28"/> <img src="./assets/badges/tech-6aa812d432b1.svg" alt="Web Worker" height="28"/></p>
 
 <hr/>
 
