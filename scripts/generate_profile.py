@@ -73,16 +73,19 @@ def render_project_cards(items, lang, columns=2, presentation=None):
 
 
 def render_github_activity(lang):
+    stats_path = ROOT / "data" / "stats.json"
+    stats = json.loads(stats_path.read_text(encoding="utf-8")) if stats_path.exists() else {}
+    updated = (stats.get("generated_at") or "")[:10]
     if lang == "zh":
         overview_alt = "GitHub 公开活动统计：提交、仓库、Stars 和 Pull Requests"
         language_alt = "按代码体积分布的主要编程语言"
         contribution_alt = "最近 365 天 GitHub 贡献热力图"
-        note = "数据来自 GitHub REST / GraphQL API，定期缓存；提交数使用 GitHub 公开 Commit Search 统计。"
+        note = f"数据来自 GitHub REST / GraphQL API，定期缓存；提交数使用 GitHub 公开 Commit Search 统计。更新于 {updated or '暂无'}。"
     else:
         overview_alt = "GitHub public activity: commits, repositories, stars and pull requests"
         language_alt = "Most used languages by source-code bytes"
         contribution_alt = "GitHub contribution activity during the last 365 days"
-        note = "Public data is cached from GitHub REST / GraphQL APIs. Commit count uses GitHub public commit search."
+        note = f"Public data is cached from GitHub REST / GraphQL APIs. Commit count uses GitHub public commit search. Updated {updated or 'not yet synced'}."
     return (
         image("assets/stats/overview.svg", overview_alt)
         + image("assets/stats/languages.svg", language_alt)
