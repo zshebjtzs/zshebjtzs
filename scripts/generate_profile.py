@@ -77,7 +77,7 @@ def render_project_cards(items, lang, columns=2, presentation=None):
         if repo_path:
             stars_url = f"https://img.shields.io/github/stars/{escape(repo_path)}?style={quote(presentation.get('badge_style', 'flat-square'))}&label=stars&color={accent}&logo=github&logoColor={accent}"
             stars = f'<img src="{stars_url}" alt="GitHub stars" height="20"/>'
-        meta = f'<p><sub>{escape(status)} &nbsp;·&nbsp; {escape(str(kind))}</sub></p>'
+        meta = f'<p>{badge(status, accent, presentation)} &nbsp; {badge(kind, presentation.get("badge_color", "21262D"), presentation)}</p>'
         footer = " &nbsp; ".join(x for x in (stars, demo_html) if x)
         cards.append(
             f'<td width="{100 // columns}%" valign="top" style="border:1px solid #{border};border-radius:10px;padding:18px;background:#{panel}">'
@@ -123,6 +123,17 @@ def render_github_activity(lang, presentation=None):
         '</tr></tbody></table>'
         f'<p align="center"><img src="{chart}" alt="{alt_chart}" width="100%"/></p>'
         f'<p align="center"><sub>{note}</sub></p>'
+    )
+
+def render_about(summary, method_title, method_desc, lang, presentation):
+    border = presentation.get("border_color", "30363D")
+    accent = presentation.get("accent", "79C0FF")
+    label = "工程方法" if lang == "zh" else "ENGINEERING METHOD"
+    return (
+        f'<table><tbody><tr><td style="border:1px solid #{border};padding:18px">'
+        f'<p>{escape(summary)}</p><p><sub>{label}</sub></p>'
+        f'<p><b><font color="#{accent}">{escape(method_title)}</font></b></p>'
+        f'<p>{escape(method_desc)}</p></td></tr></tbody></table>'
     )
 
 def render_focus_cards(groups, lang, presentation):
@@ -233,7 +244,8 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         url = links.get(key)
         if url:
             color = presentation.get("badge_color", "21262D")
-            badge_url = f'{presentation.get("badge_provider", "https://img.shields.io")}/badge/{quote(label)}-{color}?style={quote(presentation.get("badge_style", "flat-square"))}&logo={quote(logo)}&logoColor={presentation.get("accent", "79C0FF")}'
+            logo_query = f"&logo={quote(logo)}" if logo else ""
+            badge_url = f'{presentation.get("badge_provider", "https://img.shields.io")}/badge/{quote(label)}-{color}?style={quote(presentation.get("badge_style", "flat-square"))}{logo_query}&logoColor={presentation.get("accent", "79C0FF")}'
             social_badges.append(f'<a href="{escape(url)}"><img src="{badge_url}" alt="{label}" height="24"/></a>')
     social = " &nbsp; ".join(social_badges)
     archive_link = "[activity/ACTIVITY.md](./activity/ACTIVITY.md)" if zh else "[activity/ACTIVITY.en.md](./activity/ACTIVITY.en.md)"
@@ -247,7 +259,10 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "activity_archive": labels["archive_heading"],
     }
     module_bodies = {
-        "about": f"{identity.get('summary_zh' if zh else 'summary_en') or identity.get('summary', '')}\n\n{method_md}",
+        "about": render_about(
+            identity.get("summary_zh" if zh else "summary_en") or identity.get("summary", ""),
+            method_title, method_desc, lang, presentation
+        ),
         "focus": focus_md, "github_activity": render_github_activity(lang, presentation),
         "featured_projects": featured_md, "other_projects": others_md,
         "contributions": contributions_md, "highlights": highlights_md,
