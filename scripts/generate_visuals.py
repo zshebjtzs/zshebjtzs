@@ -193,6 +193,17 @@ def generate_contributions(stats):
 
 def main():
     settings=yaml.safe_load((ROOT/"profile/settings.yml").read_text(encoding="utf-8")) or {}
+    tokens=(yaml.safe_load((ROOT/"profile/modules.yml").read_text(encoding="utf-8")) or {}).get("presentation",{})
+    PALETTE.update({
+        "bg": "#"+tokens.get("page_bg","0B1724"),
+        "panel": "#"+tokens.get("panel_color","102235"),
+        "panel2": "#"+tokens.get("panel_alt_color","142B40"),
+        "border": "#"+tokens.get("border_color","2B4052"),
+        "text": "#"+tokens.get("title_color","DCE5EC"),
+        "muted": "#"+tokens.get("muted_color","91A4B5"),
+        "cyan": "#"+tokens.get("accent","79D7D0"),
+        "orange": "#"+tokens.get("secondary_accent","E8A56D"),
+    })
     stack=settings.get("tech_stack",{})
     generate_badges(stack)
     generate_hero()
