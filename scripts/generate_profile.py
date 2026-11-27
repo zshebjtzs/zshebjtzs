@@ -3,6 +3,8 @@
 from common import ROOT, load_yaml
 from html import escape
 from urllib.parse import quote
+import hashlib
+ASSET_DIR = ROOT / "assets" / "badges"
 
 def md_link(label, url):
     return f"[{label}]({url})" if url else label
@@ -38,11 +40,28 @@ def render_project(p, lang):
     return line
 
 def badge(label, color, presentation):
-    base = presentation.get("badge_provider", "https://img.shields.io")
-    style = presentation.get("badge_style", "flat-square")
-    logo = presentation.get("badge_logo_color", "79C0FF")
-    url = f"{base}/badge/{quote(str(label), safe='')}-{quote(str(color), safe='')}?style={quote(style)}&logoColor={quote(logo)}"
-    return f'<img src="{escape(url)}" alt="{escape(str(label))}" height="20"/>'
+    """Create a repository-hosted SVG badge and return its relative image tag."""
+    label_text = str(label)
+    bg = str(color).lstrip("#")
+    fg = str(presentation.get("badge_text_color", "C9D1D9")).lstrip("#")
+    accent = str(presentation.get("accent", "79C0FF")).lstrip("#")
+    digest = hashlib.sha1(f"{label_text}|{bg}|{fg}|{accent}".encode("utf-8")).hexdigest()[:12]
+    filename = f"badge-{digest}.svg"
+    width = max(54, 18 + len(label_text) * 8)
+    height = 22
+    safe_label = escape(label_text)
+    svg = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+        f'viewBox="0 0 {width} {height}" role="img" aria-label="{safe_label}">'
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="5" '
+        f'fill="#{bg}" stroke="#{accent}" stroke-opacity=".42"/>'
+        f'<text x="{width / 2}" y="15" text-anchor="middle" '
+        f'font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" '
+        f'fill="#{fg}">{safe_label}</text></svg>'
+    )
+    ASSET_DIR.mkdir(parents=True, exist_ok=True)
+    (ASSET_DIR / filename).write_text(svg + "\n", encoding="utf-8")
+    return f'<img src="./assets/badges/{filename}" alt="{escape(label_text)}" height="{height}"/>'
 
 def render_project_cards(items, lang, columns=2, presentation=None):
     """Render consistent project cards from reviewed project data."""
@@ -72,13 +91,8 @@ def render_project_cards(items, lang, columns=2, presentation=None):
         demo = p.get("demo")
         demo_label = "在线体验 ↗" if lang == "zh" else "Live Demo ↗"
         demo_html = f'<a href="{escape(demo)}">{demo_label}</a>' if demo else ""
-        repo_path = p.get("repository", "").split("github.com/")[-1].strip("/")
-        stars = ""
-        if repo_path:
-            stars_url = f"https://img.shields.io/github/stars/{escape(repo_path)}?style={quote(presentation.get('badge_style', 'flat-square'))}&label=stars&color={accent}&logo=github&logoColor={accent}"
-            stars = f'<img src="{stars_url}" alt="GitHub stars" height="20"/>'
         meta = f'<p>{badge(status, accent, presentation)} &nbsp; {badge(kind, presentation.get("badge_color", "21262D"), presentation)}</p>'
-        footer = " &nbsp; ".join(x for x in (stars, demo_html) if x)
+        footer = demo_html
         cards.append(
             f'<td width="{100 // columns}%" valign="top" style="border:1px solid #{border};border-radius:10px;padding:18px;background:#{panel}">'
             f'<h3 style="margin-top:0"><a href="{repo}">{name} ↗</a></h3>'
@@ -244,9 +258,7 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         url = links.get(key)
         if url:
             color = presentation.get("badge_color", "21262D")
-            logo_query = f"&logo={quote(logo)}" if logo else ""
-            badge_url = f'{presentation.get("badge_provider", "https://img.shields.io")}/badge/{quote(label)}-{color}?style={quote(presentation.get("badge_style", "flat-square"))}{logo_query}&logoColor={presentation.get("accent", "79C0FF")}'
-            social_badges.append(f'<a href="{escape(url)}"><img src="{badge_url}" alt="{label}" height="24"/></a>')
+            social_badges.append(f'<a href="{escape(url)}">{badge(label, color, presentation)}</a>')
     social = " &nbsp; ".join(social_badges)
     archive_link = "[activity/ACTIVITY.md](./activity/ACTIVITY.md)" if zh else "[activity/ACTIVITY.en.md](./activity/ACTIVITY.en.md)"
     archive_sentence = "完整的已审核活动记录见" if zh else "Browse the complete reviewed activity archive:"
@@ -282,9 +294,9 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "{{bio}}": identity.get("bio", "") if zh else identity.get("bio_en", identity.get("bio", "")),
         "{{social_links}}": social,
         "{{language_switch}}": (
-            f'<a href="./README.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/简体中文-{presentation.get("accent", "79C0FF")}?style=flat-square" alt="简体中文"/></a> &nbsp; <a href="./README.en.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/English-{presentation.get("badge_color", "21262D")}?style=flat-square" alt="English"/></a>'
+            f'<a href="./README.md">{badge("简体中文", presentation.get("accent", "79C0FF"), presentation)}</a> &nbsp; <a href="./README.en.md">{badge("English", presentation.get("badge_color", "21262D"), presentation)}</a>'
         ) if zh else (
-            f'<a href="./README.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/简体中文-{presentation.get("badge_color", "21262D")}?style=flat-square" alt="简体中文"/></a> &nbsp; <a href="./README.en.md"><img src="{presentation.get("badge_provider", "https://img.shields.io")}/badge/English-{presentation.get("accent", "79C0FF")}?style=flat-square" alt="English"/></a>'
+            f'<a href="./README.md">{badge("简体中文", presentation.get("badge_color", "21262D"), presentation)}</a> &nbsp; <a href="./README.en.md">{badge("English", presentation.get("accent", "79C0FF"), presentation)}</a>'
         ),
         "{{modules}}": modules_md,
         "{{about_heading}}": labels["about_heading"],

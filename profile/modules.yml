@@ -10,12 +10,11 @@ presentation:
   panel_color: "0D1117"
   border_color: "30363D"
   badge_color: "21262D"
-  badge_logo_color: "79C0FF"
+  badge_text_color: "C9D1D9"
   badge_style: flat-square
   project_columns: 2
   stats_provider: https://github-readme-stats.vercel.app
   contribution_provider: https://ghchart.rshah.org
-  badge_provider: https://img.shields.io
 modules:
   - id: about
     enabled: true
