@@ -152,8 +152,8 @@ def render_proficiency(lang):
         title = escape(localized(item, "title", lang))
         desc = escape(localized(item, "description", lang))
         values = localized(item, "items", lang, [])
-        badges = " ".join(tech_badge(str(value)) for value in values)
-        rows.append(f'<tr><td width="28%"><strong>{title}</strong><br/><sub>{desc}</sub></td><td>{badges}</td></tr>')
+        tags = " ".join(f'<code>{escape(str(value))}</code>' for value in values)
+        rows.append(f'<tr><td width="28%"><strong>{title}</strong><br/><sub>{desc}</sub></td><td>{tags}</td></tr>')
     return '<table><tbody>' + ''.join(rows) + '</tbody></table>' if rows else ""
 
 def render_beyond_code(lang):
