@@ -2,7 +2,6 @@
 """Generate Chinese-default and English profile pages from reviewed source data."""
 from common import ROOT, load_yaml
 from html import escape
-from urllib.parse import quote
 
 def md_link(label, url):
     return f"[{label}]({url})" if url else label
@@ -115,8 +114,8 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     method_md = f"**{method_title}** — {method_desc}"
     featured = sorted([p for p in projects if p.get("visibility") == "featured"], key=lambda p: p.get("order", 999))
     others = sorted([p for p in projects if p.get("visibility") == "other"], key=lambda p: p.get("order", 999))
-    featured_md = "\n\n".join(render_project(p, lang) for p in featured) or ("暂无精选项目。" if zh else "No featured projects yet.")
-    others_md = "\n\n".join(render_project(p, lang) for p in others) or ("暂无其他公开项目。" if zh else "No other public projects yet.")
+    featured_md = render_project_cards(featured, lang, columns=2)
+    others_md = render_project_cards(others, lang, columns=2)
     contributions = [a for a in records if a.get("type") in {"pull_request", "issue", "review"}]
     contributions_md = "\n".join(
         f"- [{localized(a, 'title', lang, 'Contribution')}]({a.get('url', '#')}) · {a.get('repository', '')}"
@@ -159,7 +158,7 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "activity_archive": labels["archive_heading"],
     }
     module_bodies = {
-        "about": f"{identity.get('summary_zh' if zh else 'summary_en') or identity.get('summary', '')}\\n\\n{method_md}",
+        "about": f"{identity.get('summary_zh' if zh else 'summary_en') or identity.get('summary', '')}\n\n{method_md}",
         "focus": focus_md, "github_activity": render_github_activity(lang),
         "featured_projects": featured_md, "other_projects": others_md,
         "contributions": contributions_md, "highlights": highlights_md,
@@ -168,8 +167,8 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     }
     module_config = load_yaml("profile/modules.yml").get("modules", [])
     enabled_modules = [m for m in module_config if m.get("enabled", True)]
-    modules_md = "\\n\\n".join(
-        f"## {module_titles[m['id']]}\\n\\n{module_bodies[m['id']]}"
+    modules_md = "\n\n".join(
+        f"## {module_titles[m['id']]}\n\n{module_bodies[m['id']]}"
         for m in enabled_modules if m.get("id") in module_titles
     )
     replacements = {
@@ -179,7 +178,8 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
         "{{bio}}": identity.get("bio", "") if zh else identity.get("bio_en", identity.get("bio", "")),
         "{{social_links}}": social,
         "{{language_switch}}": "**简体中文** · [English](./README.en.md)" if zh else "[简体中文](./README.md) · **English**",
-        "{{modules}}": modules_md,\n        "{{about_heading}}": labels["about_heading"],
+        "{{modules}}": modules_md,
+        "{{about_heading}}": labels["about_heading"],
         "{{focus_heading}}": labels["focus_heading"],
         "{{featured_heading}}": labels["featured_heading"],
         "{{other_heading}}": labels["other_heading"],
