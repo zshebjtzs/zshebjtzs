@@ -55,7 +55,7 @@ modules:
   - id: highlights
     enabled: true
   - id: milestones
-    enabled: true
+    enabled: false
   - id: tech_stack
     enabled: true
   - id: proficiency
