@@ -163,7 +163,7 @@ def render_github_activity(lang, presentation=None):
     presentation = presentation or {}
     username = presentation.get("username", "zshebjtzs")
     theme = presentation.get("theme", "transparent")
-    accent = presentation.get("accent", "79C0FF")
+    accent = presentation.get("accent", "79D7D0")
     title = presentation.get("title_color", accent)
     text_color = presentation.get("text_color", "C9D1D9")
     bg = presentation.get("panel_color", "0D1117")
@@ -282,7 +282,7 @@ def build_page(lang, identity, focus, projects, records, milestones, stack, temp
     featured = sorted([p for p in projects if p.get("visibility") == "featured"], key=lambda p: p.get("order", 999))
     others = sorted([p for p in projects if p.get("visibility") == "other"], key=lambda p: p.get("order", 999))
     featured_md = render_project_cards(featured, lang, columns=project_columns, presentation=presentation)
-    others_md = render_project_cards(others, lang, columns=project_columns, presentation=presentation)
+    others_md = render_project_cards(others, lang, columns=1, presentation=presentation)
     contributions = [a for a in records if a.get("type") in {"pull_request", "issue", "review"}]
     contributions_md = render_link_cards(contributions, lang, presentation, limit=8)
     highlights = [a for a in records if a.get("review_status") == "featured"]
