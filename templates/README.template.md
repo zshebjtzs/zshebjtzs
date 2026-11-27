@@ -1,13 +1,13 @@
 <!-- Generated file. Edit profile/*.yml, profile/modules.yml, and activity/records.yml instead. -->
 <div align="center">
 
-# {{display_name}}
-
-### {{title}}
-
 <sub>{{domains}}</sub>
 
-> {{bio}}
+# {{display_name}}
+
+**{{title}}**
+
+{{bio}}
 
 {{social_links}}
 
