@@ -113,9 +113,11 @@ def generate_focus(lang):
         svg+=f'<rect x="{x}" y="16" width="3" height="154" rx="1.5" fill="{PALETTE["cyan"] if i<2 else PALETTE["orange"]}"/>'
         svg+=f'<text x="{x+18}" y="45" font-family="Verdana,sans-serif" font-size="11" letter-spacing="1.5" fill="{PALETTE["muted"]}">{num} / {en}</text>'
         svg+=f'<text x="{x+18}" y="82" font-family="Verdana,DejaVu Sans,sans-serif" font-size="20" font-weight="700" fill="{PALETTE["text"]}">{escape(title)}</text>'
+        combined = " · ".join(str(value) for value in values)
         lines = []
-        for value in values:
-            lines.extend([value[j:j+19] for j in range(0,len(value),19)] or [""])
+        while combined:
+            lines.append(combined[:38])
+            combined = combined[38:]
         for j,line in enumerate(lines[:3]):
             svg+=f'<text x="{x+18}" y="{111+j*19}" font-family="Verdana,DejaVu Sans,sans-serif" font-size="12" fill="{PALETTE["muted"]}">{escape(line)}</text>'
     svg+='</svg>'
